@@ -20,7 +20,7 @@ jobs:
       - name: Generate content with Claude
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: node scripts/generate.js
+        run: node scripts/generate.cjs
 
       - name: Commit and push new content
         run: |
