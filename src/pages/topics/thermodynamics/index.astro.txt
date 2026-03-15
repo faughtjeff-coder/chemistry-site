@@ -1,0 +1,23 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Thermodynamics" description="Chemistry articles about thermodynamics for all levels">
+  <style>
+    .page-header { background: #0C447C; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .page-title { font-size: 28px; font-weight: 600; color: #E6F1FB; margin-bottom: 8px; }
+    .page-desc { font-size: 15px; color: #B5D4F4; line-height: 1.6; }
+    .coming-soon { background: #E6F1FB; border-radius: 12px; padding: 2rem; text-align: center; color: #0C447C; font-size: 15px; }
+    .level-info { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+    .level-tag { font-size: 12px; padding: 4px 12px; border-radius: 999px; }
+  </style>
+  <div class="page-header">
+    <h1 class="page-title">Thermodynamics</h1>
+    <p class="page-desc">Energy, enthalpy, entropy — why some reactions release heat and others absorb it, and what drives chemical change.</p>
+    <div class="level-info">
+      <span class="level-tag" style="background:#FAEEDA;color:#633806;">Beginner</span>
+      <span class="level-tag" style="background:#E1F5EE;color:#085041;">General</span>
+      <span class="level-tag" style="background:#E6F1FB;color:#0C447C;">AP</span>
+    </div>
+  </div>
+  <div class="coming-soon">Thermodynamics articles coming soon — check back next week!</div>
+</Layout>

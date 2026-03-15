@@ -1,0 +1,23 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Reactions" description="Chemistry articles about chemical reactions for all levels">
+  <style>
+    .page-header { background: #633806; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .page-title { font-size: 28px; font-weight: 600; color: #FAEEDA; margin-bottom: 8px; }
+    .page-desc { font-size: 15px; color: #FAC775; line-height: 1.6; }
+    .coming-soon { background: #FAEEDA; border-radius: 12px; padding: 2rem; text-align: center; color: #633806; font-size: 15px; }
+    .level-info { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+    .level-tag { font-size: 12px; padding: 4px 12px; border-radius: 999px; }
+  </style>
+  <div class="page-header">
+    <h1 class="page-title">Reactions</h1>
+    <p class="page-desc">Synthesis, decomposition, combustion, redox — the different types of chemical reactions and how to recognize them.</p>
+    <div class="level-info">
+      <span class="level-tag" style="background:#FAEEDA;color:#633806;">Beginner</span>
+      <span class="level-tag" style="background:#E1F5EE;color:#085041;">General</span>
+      <span class="level-tag" style="background:#E6F1FB;color:#0C447C;">AP</span>
+    </div>
+  </div>
+  <div class="coming-soon">Reaction type articles coming soon — check back next week!</div>
+</Layout>

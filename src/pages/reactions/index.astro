@@ -1,0 +1,108 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Reactions" description="Dramatic chemistry reactions explained at high school level">
+  <style>
+    .page-header {
+      background: #3C3489;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .page-title { font-size: 28px; font-weight: 600; color: #EEEDFE; margin-bottom: 8px; }
+    .page-desc { font-size: 15px; color: #AFA9EC; line-height: 1.6; }
+    .reactions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .reaction-card {
+      background: white;
+      border-radius: 12px;
+      border: 0.5px solid #e0e0e0;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .reaction-card:hover { border-color: #AFA9EC; }
+    .card-img {
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #3C3489;
+    }
+    .card-body { padding: 1rem; }
+    .card-tags { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; }
+    .card-tag { font-size: 11px; padding: 2px 8px; border-radius: 999px; }
+    .card-title { font-size: 16px; font-weight: 600; color: #1a1a2e; margin-bottom: 6px; }
+    .card-desc { font-size: 13px; color: #888; line-height: 1.5; }
+    .coming-soon {
+      background: #EEEDFE;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      color: #534AB7;
+      font-size: 15px;
+      margin-top: 16px;
+    }
+  </style>
+
+  <div class="page-header">
+    <h1 class="page-title">Reaction articles</h1>
+    <p class="page-desc">One dramatic reaction per article — explained clearly with videos, equations, and links to real research. New reaction every week.</p>
+  </div>
+
+  <div class="reactions-grid">
+    <a href="/articles/reactions/elephant-toothpaste" class="reaction-card">
+      <div class="card-img">
+        <svg width="80" height="70" viewBox="0 0 80 70">
+          <rect x="30" y="30" width="20" height="35" rx="4" fill="#534AB7"/>
+          <rect x="35" y="18" width="7" height="15" rx="3" fill="#AFA9EC"/>
+          <path d="M33 18 Q25 5 20 0 Q28 8 27 18Z" fill="#5DCAA5" opacity="0.8"/>
+          <path d="M40 16 Q40 2 38 0 Q43 6 45 16Z" fill="#9FE1CB" opacity="0.9"/>
+          <path d="M47 18 Q55 5 60 0 Q52 8 53 18Z" fill="#5DCAA5" opacity="0.8"/>
+          <circle cx="20" cy="0" r="4" fill="#9FE1CB" opacity="0.6"/>
+          <circle cx="38" cy="0" r="5" fill="#9FE1CB" opacity="0.7"/>
+          <circle cx="60" cy="0" r="4" fill="#9FE1CB" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag" style="background:#FAEEDA;color:#633806;">Decomposition</span>
+          <span class="card-tag" style="background:#EEEDFE;color:#534AB7;">General</span>
+        </div>
+        <div class="card-title">Elephant toothpaste</div>
+        <div class="card-desc">When hydrogen peroxide meets a catalyst — an explosive foam reaction that demonstrates catalysis dramatically.</div>
+      </div>
+    </a>
+
+    <div class="reaction-card" style="opacity:0.5; cursor:default;">
+      <div class="card-img" style="background:#633806;">
+        <svg width="70" height="70" viewBox="0 0 70 70">
+          <rect x="25" y="25" width="20" height="30" rx="3" fill="#FAC775"/>
+          <ellipse cx="35" cy="55" rx="15" ry="5" fill="#EF9F27" opacity="0.5"/>
+          <path d="M30 24 Q25 15 20 8" stroke="#F09995" stroke-width="2" fill="none"/>
+          <path d="M35 22 Q35 12 35 5" stroke="#FAC775" stroke-width="2" fill="none"/>
+          <path d="M40 24 Q45 15 50 8" stroke="#F09995" stroke-width="2" fill="none"/>
+          <circle cx="20" cy="6" r="3" fill="#F09995" opacity="0.7"/>
+          <circle cx="35" cy="3" r="4" fill="#FAC775" opacity="0.8"/>
+          <circle cx="50" cy="6" r="3" fill="#F09995" opacity="0.7"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag" style="background:#FAEEDA;color:#633806;">Combustion</span>
+          <span class="card-tag" style="background:#E1F5EE;color:#085041;">General</span>
+        </div>
+        <div class="card-title">Thermite reaction</div>
+        <div class="card-desc">Coming soon — iron oxide meets aluminum at extreme temperatures.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="coming-soon">
+    New reaction articles added every week automatically. Check back soon!
+  </div>
+</Layout>

@@ -1,0 +1,62 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Topics" description="Browse chemistry articles by topic">
+  <style>
+    h1 { font-size: 28px; font-weight: 600; color: #26215C; margin-bottom: 8px; }
+    .subtitle { font-size: 16px; color: #888; margin-bottom: 2rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .card {
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-decoration: none;
+      display: block;
+      transition: opacity 0.2s;
+    }
+    .card:hover { opacity: 0.85; }
+    .card h2 { font-size: 18px; font-weight: 600; margin-bottom: 6px; }
+    .card p { font-size: 14px; line-height: 1.5; }
+  </style>
+
+  <h1>Browse by topic</h1>
+  <p class="subtitle">Choose a topic to find articles at every level</p>
+
+  <div class="grid">
+    <a href="/topics/atomic-structure" class="card" style="background:#EEEDFE;color:#26215C;">
+      <h2>Atomic Structure</h2>
+      <p>Protons, neutrons, electrons and orbitals</p>
+    </a>
+    <a href="/topics/bonding" class="card" style="background:#E1F5EE;color:#085041;">
+      <h2>Bonding</h2>
+      <p>Ionic, covalent, and metallic bonds</p>
+    </a>
+    <a href="/topics/reactions" class="card" style="background:#FAEEDA;color:#633806;">
+      <h2>Reactions</h2>
+      <p>Synthesis, decomposition, combustion, redox</p>
+    </a>
+    <a href="/topics/acids-and-bases" class="card" style="background:#FAECE7;color:#712B13;">
+      <h2>Acids & Bases</h2>
+      <p>pH, neutralization and buffers</p>
+    </a>
+    <a href="/topics/thermodynamics" class="card" style="background:#E6F1FB;color:#0C447C;">
+      <h2>Thermodynamics</h2>
+      <p>Energy, enthalpy and entropy</p>
+    </a>
+    <a href="/topics/organic-chemistry" class="card" style="background:#FBEAF0;color:#72243E;">
+      <h2>Organic Chemistry</h2>
+      <p>Carbon chains, functional groups and polymers</p>
+    </a>
+    <a href="/topics/periodic-table" class="card" style="background:#EAF3DE;color:#27500A;">
+      <h2>Periodic Table</h2>
+      <p>Elements, groups, periods and trends</p>
+    </a>
+    <a href="/topics/electrochemistry" class="card" style="background:#EEEDFE;color:#3C3489;">
+      <h2>Electrochemistry</h2>
+      <p>Batteries, electrolysis and redox</p>
+    </a>
+  </div>
+</Layout>

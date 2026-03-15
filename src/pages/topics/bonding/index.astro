@@ -1,0 +1,23 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Bonding" description="Chemistry articles about chemical bonding for all levels">
+  <style>
+    .page-header { background: #085041; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .page-title { font-size: 28px; font-weight: 600; color: #E1F5EE; margin-bottom: 8px; }
+    .page-desc { font-size: 15px; color: #9FE1CB; line-height: 1.6; }
+    .coming-soon { background: #E1F5EE; border-radius: 12px; padding: 2rem; text-align: center; color: #085041; font-size: 15px; }
+    .level-info { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+    .level-tag { font-size: 12px; padding: 4px 12px; border-radius: 999px; }
+  </style>
+  <div class="page-header">
+    <h1 class="page-title">Bonding</h1>
+    <p class="page-desc">Ionic, covalent, metallic — how atoms join together and why it matters for everything from water to DNA.</p>
+    <div class="level-info">
+      <span class="level-tag" style="background:#FAEEDA;color:#633806;">Beginner</span>
+      <span class="level-tag" style="background:#E1F5EE;color:#085041;">General</span>
+      <span class="level-tag" style="background:#E6F1FB;color:#0C447C;">AP</span>
+    </div>
+  </div>
+  <div class="coming-soon">Bonding articles coming soon — check back next week!</div>
+</Layout>
