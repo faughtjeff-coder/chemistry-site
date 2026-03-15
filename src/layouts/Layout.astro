@@ -62,7 +62,7 @@ const { title = "ChemSpark", description = "Chemistry for every level" } = Astro
       </a>
       <div class="nav-links">
         <div class="dropdown" id="topics-dropdown">
-          <button class="dropdown-btn" onclick="toggleDropdown()">Topics ▾</button>
+          <button class="dropdown-btn">Topics ▾</button>
           <div class="dropdown-menu">
             <a href="/topics/atomic-structure">Atomic Structure</a>
             <a href="/topics/bonding">Bonding</a>
@@ -93,15 +93,18 @@ const { title = "ChemSpark", description = "Chemistry for every level" } = Astro
       </div>
     </footer>
     <script>
-      function toggleDropdown() {
+      document.addEventListener('DOMContentLoaded', function() {
         const dropdown = document.getElementById('topics-dropdown');
-        dropdown.classList.toggle('open');
-      }
-      document.addEventListener('click', function(e) {
-        const dropdown = document.getElementById('topics-dropdown');
-        if (!dropdown.contains(e.target)) {
-          dropdown.classList.remove('open');
-        }
+        const btn = dropdown.querySelector('.dropdown-btn');
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          dropdown.classList.toggle('open');
+        });
+        document.addEventListener('click', function(e) {
+          if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+          }
+        });
       });
     </script>
   </body>
