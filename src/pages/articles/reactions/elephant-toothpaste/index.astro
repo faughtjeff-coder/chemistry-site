@@ -1,0 +1,214 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+---
+<Layout title="Elephant Toothpaste" description="Why hydrogen peroxide explodes into foam when you add a catalyst">
+  <style>
+    .article-header {
+      background: #3C3489;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .tag {
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+    .article-title {
+      font-size: 28px;
+      font-weight: 600;
+      color: #EEEDFE;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+    .article-desc {
+      font-size: 15px;
+      color: #AFA9EC;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .meta { font-size: 13px; color: #7F77DD; }
+    .video-wrapper {
+      background: #1a1a2e;
+      border-radius: 12px;
+      aspect-ratio: 16/9;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+    .video-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .equation-box {
+      background: #26215C;
+      border-radius: 12px;
+      padding: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .eq-part { font-size: 18px; font-weight: 500; }
+    .eq-arrow { font-size: 14px; color: #7F77DD; }
+    .body-text {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #1a1a2e;
+      margin-bottom: 1.5rem;
+    }
+    .callout {
+      background: #f5f5f5;
+      border-left: 3px solid #FAC775;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .callout-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 4px;
+    }
+    .callout-text {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+    .research-links { display: flex; flex-direction: column; gap: 8px; margin-bottom: 2rem; }
+    .research-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border: 0.5px solid #e0e0e0;
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .research-link:hover { border-color: #AFA9EC; background: #f9f9ff; }
+    .research-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 14px;
+    }
+    .research-title { font-size: 13px; font-weight: 500; color: #1a1a2e; }
+    .research-source { font-size: 11px; color: #888; margin-top: 2px; }
+    .research-arrow { margin-left: auto; color: #AFA9EC; font-size: 14px; }
+    .topic-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .topic-tag {
+      font-size: 12px;
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+  </style>
+
+  <div class="article-header">
+    <div class="tags">
+      <span class="tag" style="background:#FAC775;color:#412402;">Reaction of the week</span>
+      <span class="tag" style="background:#E1F5EE;color:#085041;">Decomposition</span>
+      <span class="tag" style="background:#EEEDFE;color:#26215C;">General chemistry</span>
+    </div>
+    <h1 class="article-title">Elephant toothpaste: when hydrogen peroxide goes wild</h1>
+    <p class="article-desc">A tiny drop of catalyst turns hydrogen peroxide into a tower of foam in seconds. Here's the dramatic chemistry behind one of the most visual reactions you can do in a classroom.</p>
+    <div class="meta">8 min read · Includes video · 3 research links</div>
+  </div>
+
+  <div class="video-wrapper">
+    <iframe
+      src="https://www.youtube.com/embed/ezsur0L0L1c"
+      title="Elephant Toothpaste - NileRed"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="section-label">The reaction</div>
+  <div class="equation-box">
+    <span class="eq-part" style="color:#AFA9EC;">2 H₂O₂</span>
+    <span class="eq-arrow">──catalyst──→</span>
+    <span class="eq-part" style="color:#9FE1CB;">2 H₂O</span>
+    <span class="eq-part" style="color:#7F77DD;">+</span>
+    <span class="eq-part" style="color:#FAC775;">O₂ ↑</span>
+  </div>
+
+  <p class="body-text">
+    Hydrogen peroxide looks like ordinary water — clear, odorless, harmless in small amounts. But chemically it's unstable. Given the chance, it wants to break apart into water and oxygen gas. At room temperature this happens so slowly you'd never notice. Add a catalyst and everything changes.
+  </p>
+
+  <p class="body-text">
+    When potassium iodide or yeast is added to concentrated hydrogen peroxide, the decomposition reaction accelerates dramatically. The oxygen gas is released so rapidly that it gets trapped in the dish soap mixed into the solution — creating a massive foam that erupts out of the container like toothpaste squeezed by an elephant.
+  </p>
+
+  <div class="callout">
+    <div class="callout-title">Key concept: catalysts and activation energy</div>
+    <div class="callout-text">A catalyst speeds up a reaction without being consumed by it. It works by lowering the activation energy — the energy barrier the reaction needs to overcome to get started. The catalyst provides an alternative pathway with a lower energy requirement. This is exactly how enzymes work in your body, driving reactions that would otherwise take thousands of years.</div>
+  </div>
+
+  <p class="body-text">
+    The reaction is also exothermic — it releases heat. If you touch the foam right after the reaction you'll feel it is warm. This heat comes from the breaking and forming of chemical bonds as hydrogen peroxide converts to water and oxygen.
+  </p>
+
+  <p class="body-text">
+    The concentration of hydrogen peroxide matters a lot. The 3% solution from a drugstore produces a modest foam. The 30% laboratory grade solution used by NileRed produces the dramatic tower you see in the video. Higher concentration means more molecules available to decompose at once.
+  </p>
+
+  <div class="callout">
+    <div class="callout-title">Try it yourself</div>
+    <div class="callout-text">Mix 3% hydrogen peroxide with a squirt of dish soap and a packet of dry yeast dissolved in warm water. The yeast contains catalase — a natural enzyme that breaks down hydrogen peroxide. Safe enough to do at home or in class.</div>
+  </div>
+
+  <div class="section-label" style="margin-top:2rem;">Go deeper</div>
+  <div class="research-links">
+    <a href="https://pubs.acs.org/doi/10.1021/ed083p1834" target="_blank" class="research-link">
+      <div class="research-icon" style="background:#E6F1FB;">📄</div>
+      <div>
+        <div class="research-title">Catalytic decomposition of H₂O₂ — Journal of Chemical Education</div>
+        <div class="research-source">pubs.acs.org · Research article</div>
+      </div>
+      <span class="research-arrow">→</span>
+    </a>
+    <a href="https://www.khanacademy.org/science/ap-chemistry-beta/x2eef969c74e0d802:kinetics/x2eef969c74e0d802:catalysis/a/catalysis" target="_blank" class="research-link">
+      <div class="research-icon" style="background:#E1F5EE;">📄</div>
+      <div>
+        <div class="research-title">How catalysts work — Khan Academy</div>
+        <div class="research-source">khanacademy.org · Free lesson</div>
+      </div>
+      <span class="research-arrow">→</span>
+    </a>
+    <a href="https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Kinetics/06%3A_Reaction_Mechanisms/6.02%3A_Activation_Energy" target="_blank" class="research-link">
+      <div class="research-icon" style="background:#EEEDFE;">📄</div>
+      <div>
+        <div class="research-title">Activation energy and reaction rates — LibreTexts Chemistry</div>
+        <div class="research-source">chem.libretexts.org · Free textbook</div>
+      </div>
+      <span class="research-arrow">→</span>
+    </a>
+  </div>
+
+  <div class="section-label">Topics</div>
+  <div class="topic-tags">
+    <span class="topic-tag" style="background:#EEEDFE;color:#534AB7;">Decomposition</span>
+    <span class="topic-tag" style="background:#E1F5EE;color:#085041;">Catalysis</span>
+    <span class="topic-tag" style="background:#FAEEDA;color:#633806;">Activation energy</span>
+    <span class="topic-tag" style="background:#E6F1FB;color:#0C447C;">Reaction rates</span>
+    <span class="topic-tag" style="background:#EAF3DE;color:#3B6D11;">Exothermic reactions</span>
+  </div>
+</Layout>
