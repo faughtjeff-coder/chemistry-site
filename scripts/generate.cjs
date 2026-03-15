@@ -57,6 +57,11 @@ const req = https.request(options, (res) => {
   res.on('data', (chunk) => body += chunk);
   res.on('end', () => {
     const response = JSON.parse(body);
+    console.log('API response:', JSON.stringify(response, null, 2));
+    if (!response.content) {
+      console.error('Error from API:', response);
+      process.exit(1);
+    }
     const content = response.content[0].text;
     const filename = topic.replace(/\s+/g, '-').toLowerCase() + '.astro';
     const filepath = path.join('src', 'pages', 'articles', filename);
