@@ -1,0 +1,269 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Atomic Structure Quiz — Beginner" description="Test your knowledge of atomic structure with this beginner level quiz">
+  <style>
+    .quiz-header { background: #26215C; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .quiz-title { font-size: 26px; font-weight: 600; color: #EEEDFE; margin-bottom: 8px; }
+    .quiz-meta { font-size: 14px; color: #AFA9EC; }
+    .question-box { background: white; border-radius: 12px; border: 0.5px solid #e0e0e0; padding: 2rem; margin-bottom: 1.5rem; display: none; }
+    .question-box.active { display: block; }
+    .question-number { font-size: 12px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+    .question-text { font-size: 18px; font-weight: 500; color: #1a1a2e; margin-bottom: 1.5rem; line-height: 1.5; }
+    .options { display: flex; flex-direction: column; gap: 10px; }
+    .option { background: #f5f5f5; border: 2px solid transparent; border-radius: 8px; padding: 12px 16px; font-size: 15px; color: #1a1a2e; cursor: pointer; text-align: left; font-family: inherit; transition: border-color 0.2s; }
+    .option:hover { border-color: #AFA9EC; }
+    .option.correct { background: #E1F5EE; border-color: #085041; color: #085041; }
+    .option.wrong { background: #FAECE7; border-color: #712B13; color: #712B13; }
+    .option.show-correct { background: #E1F5EE; border-color: #085041; color: #085041; }
+    .feedback { margin-top: 1rem; padding: 0.75rem 1rem; border-radius: 8px; font-size: 14px; display: none; line-height: 1.5; }
+    .feedback.visible { display: block; }
+    .feedback.correct { background: #E1F5EE; color: #085041; }
+    .feedback.wrong { background: #FAECE7; color: #712B13; }
+    .next-btn { margin-top: 1rem; background: #534AB7; color: white; border: none; padding: 10px 24px; border-radius: 8px; font-size: 15px; cursor: pointer; font-family: inherit; display: none; }
+    .next-btn.visible { display: block; }
+    .progress { background: #f5f5f5; border-radius: 999px; height: 8px; margin-bottom: 2rem; overflow: hidden; }
+    .progress-bar { background: #534AB7; height: 100%; border-radius: 999px; transition: width 0.3s; }
+    .score-box { background: #26215C; border-radius: 12px; padding: 2rem; text-align: center; display: none; }
+    .score-box.visible { display: block; }
+    .score-title { font-size: 22px; font-weight: 600; color: #EEEDFE; margin-bottom: 8px; }
+    .score-value { font-size: 48px; font-weight: 600; color: #FAC775; margin-bottom: 8px; }
+    .score-message { font-size: 15px; color: #AFA9EC; margin-bottom: 1.5rem; }
+    .retry-btn { background: #534AB7; color: white; border: none; padding: 10px 24px; border-radius: 8px; font-size: 15px; cursor: pointer; font-family: inherit; }
+  </style>
+
+  <div class="quiz-header">
+    <h1 class="quiz-title">Atomic Structure — Beginner</h1>
+    <div class="quiz-meta">10 questions · Multiple choice · Instant feedback</div>
+  </div>
+
+  <div class="progress">
+    <div class="progress-bar" id="progress-bar" style="width:0%"></div>
+  </div>
+
+  <div id="q1" class="question-box active">
+    <div class="question-number">Question 1 of 10</div>
+    <div class="question-text">What is an atom?</div>
+    <div class="options">
+      <button class="option" onclick="answer(this, false, 'q1')">A molecule made of two or more elements</button>
+      <button class="option" onclick="answer(this, true, 'q1')">The smallest particle of an element that keeps its chemical properties</button>
+      <button class="option" onclick="answer(this, false, 'q1')">A charged particle found in the nucleus</button>
+      <button class="option" onclick="answer(this, false, 'q1')">A type of chemical bond</button>
+    </div>
+    <div class="feedback" id="feedback-q1"></div>
+    <button class="next-btn" id="next-q1" onclick="nextQuestion('q1', 'q2')">Next question →</button>
+  </div>
+
+  <div id="q2" class="question-box">
+    <div class="question-number">Question 2 of 10</div>
+    <div class="question-text">Where are protons found in an atom?</div>
+    <div class="options">
+      <button class="option" onclick="answer(this, false, 'q2')">In the electron shells</button>
+      <button class="option" onclick="answer(this, false, 'q2')">Orbiting the nucleus</button>
+      <button class="option" onclick="answer(this, true, 'q2')">In the nucleus</button>
+      <button class="option" onclick="answer(this, false, 'q2')">Between atoms</button>
+    </div>
+    <div class="feedback" id="feedback-q2"></div>
+    <button class="next-btn" id="next-q2" onclick="nextQuestion('q2', 'q3')">Next question →</button>
+  </div>
+
+  <div id="q3" class="question-box">
+    <div class="question-number">Question 3 of 10</div>
+    <div class="question-text">What charge does an electron have?</div>
+    <div class="options">
+      <button class="option" onclick="answer(this, false, 'q3')">Positive</button>
+      <button class="option" onclick="answer(this, false, 'q3')">No charge</button>
+      <button class="option" onclick="answer(this, true, 'q3')">Negative</button>
+      <button class="option" onclick="answer(this, false, 'q3')">It depends on the element</button>
+    </div>
+    <div class="feedback" id="feedback-q3"></div>
+    <button class="next-btn" id="next-q3" onclick="nextQuestion('q3', 'q4')">Next question →</button>
+  </div>
+
+  <div id="q4" class="question-box">
+    <div class="question-number">Question 4 of 10</div>
+    <div class="question-text">What is the atomic number of an element?</div>
+    <div class="options">
+      <button class="option" onclick="answer(this, false, 'q4')">The total number of protons and neutrons</button>
+      <button class="option" onclick="answer(this, true, 'q4')">The number of protons in the nucleus</button>
+      <button class="option" onclick="answer(this, false, 'q4')">The number of electrons in the outer shell</button>
+      <button class="option" onclick="answer(this, false, 'q4')">The mass of one atom in grams</button>
+    </div>
+    <div class="feedback" id="feedback-q4"></div>
+    <button class="next-btn" id="next-q4" onclick="nextQuestion('q4', 'q5')">Next question →</button>
+  </div>
+
+  <div id="q5" class="question-box">
+    <div class="question-number">Question 5 of 10</div>
+    <div class="question-text">In a neutral atom, how does the number of protons compare to the number of electrons?</div>
+    <div class="options">
+      <button class="option" onclick="answer(this, false, 'q5')">There are always more protons than electrons</button>
+      <button class="option" onclick="answer(this, false, 'q5')">There are always more electrons than protons</button>
+      <button class="option" onclick="answer(this, true, 'q5')">They are equal</button>
+      <button class="option" onclick="answer(this, false, 'q5')">Protons and electrons are not related</button>
+    </div>
+    <div class="feedback" id="feedback-q5"></div>
+    <button class="next-btn" id="next-q5" onclick="nextQuestion('q5', 'q6')">Next question →</button>
+  </div>
+
+  <div id="q6" class="question-box">
+    <div class="question-number">Question 6 of 10</div>
+    <div class="question-text">What particle has no electrical charge?</div>
+    <div class="options">
+      <button class="option" onclick="answer(this, false, 'q6')">Proton</button>
+      <button class="option" onclick="answer(this, true, 'q6')">Neutron</button>
+      <button class="option" onclick="answer(this, false, 'q6')">Electron</button>
+      <button class="option" onclick="answer(this, false, 'q6')">Ion</button>
+    </div>
+    <div class="feedback" id="feedback-q6"></div>
+    <button class="next-btn" id="next-q6" onclick="nextQuestion('q6', 'q7')">Next question →</button>
+  </div>
+
+  <div id="q7" class="question-box">
+    <div class="question-number">Question 7 of 10</div>
+    <div class="question-text">Carbon has an atomic number of 6. How many protons does a carbon atom have?</div>
+    <div class="options">
+      <button class="option" onclick="answer(this, false, 'q7')">12</button>
+      <button class="option" onclick="answer(this, false, 'q7')">3</button>
+      <button class="option" onclick="answer(this, true, 'q7')">6</button>
+      <button class="option" onclick="answer(this, false, 'q7')">8</button>
+    </div>
+    <div class="feedback" id="feedback-q7"></div>
+    <button class="next-btn" id="next-q7" onclick="nextQuestion('q7', 'q8')">Next question →</button>
+  </div>
+
+  <div id="q8" class="question-box">
+    <div class="question-number">Question 8 of 10</div>
+    <div class="question-text">Where are electrons found in an atom?</div>
+    <div class="options">
+      <button class="option" onclick="answer(this, false, 'q8')">Inside the nucleus</button>
+      <button class="option" onclick="answer(this, true, 'q8')">In shells around the nucleus</button>
+      <button class="option" onclick="answer(this, false, 'q8')">Between the protons and neutrons</button>
+      <button class="option" onclick="answer(this, false, 'q8')">Only on the surface of the atom</button>
+    </div>
+    <div class="feedback" id="feedback-q8"></div>
+    <button class="next-btn" id="next-q8" onclick="nextQuestion('q8', 'q9')">Next question →</button>
+  </div>
+
+  <div id="q9" class="question-box">
+    <div class="question-number">Question 9 of 10</div>
+    <div class="question-text">What is the maximum number of electrons in the first electron shell?</div>
+    <div class="options">
+      <button class="option" onclick="answer(this, false, 'q9')">8</button>
+      <button class="option" onclick="answer(this, true, 'q9')">2</button>
+      <button class="option" onclick="answer(this, false, 'q9')">18</button>
+      <button class="option" onclick="answer(this, false, 'q9')">4</button>
+    </div>
+    <div class="feedback" id="feedback-q9"></div>
+    <button class="next-btn" id="next-q9" onclick="nextQuestion('q9', 'q10')">Next question →</button>
+  </div>
+
+  <div id="q10" class="question-box">
+    <div class="question-number">Question 10 of 10</div>
+    <div class="question-text">What happens to an atom if it gains or loses electrons?</div>
+    <div class="options">
+      <button class="option" onclick="answer(this, false, 'q10')">It becomes a different element</button>
+      <button class="option" onclick="answer(this, false, 'q10')">It explodes</button>
+      <button class="option" onclick="answer(this, false, 'q10')">Nothing changes</button>
+      <button class="option" onclick="answer(this, true, 'q10')">It becomes a charged ion</button>
+    </div>
+    <div class="feedback" id="feedback-q10"></div>
+    <button class="next-btn" id="next-q10" onclick="showScore()">See my score →</button>
+  </div>
+
+  <div class="score-box" id="score-box">
+    <div class="score-title">Quiz complete!</div>
+    <div class="score-value" id="score-value"></div>
+    <div class="score-message" id="score-message"></div>
+    <button class="retry-btn" onclick="retryQuiz()">Try again</button>
+  </div>
+
+  <script>
+    let score = 0;
+    let answered = {};
+
+    const feedback = {
+      q1: { correct: 'Correct! An atom is the smallest particle of an element that keeps its chemical properties.', wrong: 'Not quite. An atom is the smallest particle of an element that keeps its chemical properties.' },
+      q2: { correct: 'Correct! Protons are found in the nucleus at the center of the atom.', wrong: 'Not quite. Protons are found in the nucleus, not in the electron shells.' },
+      q3: { correct: 'Correct! Electrons have a negative charge.', wrong: 'Not quite. Electrons have a negative charge. Protons are positive and neutrons have no charge.' },
+      q4: { correct: 'Correct! The atomic number is the number of protons in the nucleus.', wrong: 'Not quite. The atomic number is the number of protons. The mass number is protons plus neutrons.' },
+      q5: { correct: 'Correct! In a neutral atom the number of protons equals the number of electrons.', wrong: 'Not quite. In a neutral atom the positive charges (protons) and negative charges (electrons) must balance — so they are equal.' },
+      q6: { correct: 'Correct! Neutrons have no electrical charge.', wrong: 'Not quite. Neutrons have no charge. Protons are positive and electrons are negative.' },
+      q7: { correct: 'Correct! The atomic number is 6 so carbon has 6 protons.', wrong: 'Not quite. The atomic number tells you the number of protons. Carbon has atomic number 6 so it has 6 protons.' },
+      q8: { correct: 'Correct! Electrons are found in shells around the nucleus.', wrong: 'Not quite. Electrons orbit the nucleus in shells — they are not inside the nucleus.' },
+      q9: { correct: 'Correct! The first electron shell holds a maximum of 2 electrons.', wrong: 'Not quite. The first shell holds a maximum of 2 electrons. The second shell holds up to 8.' },
+      q10: { correct: 'Correct! When an atom gains or loses electrons it becomes a charged ion.', wrong: 'Not quite. When an atom gains or loses electrons it becomes an ion — a charged particle.' }
+    };
+
+    function answer(btn, isCorrect, qId) {
+      if (answered[qId]) return;
+      answered[qId] = true;
+      const options = btn.parentElement.querySelectorAll('.option');
+      options.forEach(opt => opt.disabled = true);
+      const fb = document.getElementById('feedback-' + qId);
+      if (isCorrect) {
+        btn.classList.add('correct');
+        fb.textContent = feedback[qId].correct;
+        fb.className = 'feedback visible correct';
+        score++;
+      } else {
+        btn.classList.add('wrong');
+        fb.textContent = feedback[qId].wrong;
+        fb.className = 'feedback visible wrong';
+        options.forEach(opt => {
+          if (opt.onclick.toString().includes('true')) {
+            opt.classList.add('show-correct');
+          }
+        });
+      }
+      document.getElementById('next-' + qId).classList.add('visible');
+      const qNum = parseInt(qId.replace('q',''));
+      document.getElementById('progress-bar').style.width = (qNum * 10) + '%';
+    }
+
+    function nextQuestion(currentId, nextId) {
+      document.getElementById(currentId).classList.remove('active');
+      document.getElementById(nextId).classList.add('active');
+    }
+
+    function showScore() {
+      document.getElementById('q10').classList.remove('active');
+      document.getElementById('progress-bar').style.width = '100%';
+      const scoreBox = document.getElementById('score-box');
+      scoreBox.classList.add('visible');
+      document.getElementById('score-value').textContent = score + '/10';
+      const messages = {
+        10: 'Perfect score! Outstanding work.',
+        9: 'Excellent! Almost perfect.',
+        8: 'Great work! You know your atoms.',
+        7: 'Good job! Review a couple of topics to get to 100%.',
+        6: 'Not bad! Read through the article again to improve.',
+        5: 'Keep going! Review the atomic structure article and try again.',
+        4: 'Keep practicing! The article will help you improve.',
+        3: 'Don\'t give up! Read the atomic structure article carefully and retry.',
+        2: 'Keep trying! Start with the article before retaking the quiz.',
+        1: 'Keep trying! Read the atomic structure article carefully.',
+        0: 'Don\'t worry — read the atomic structure article and try again!'
+      };
+      document.getElementById('score-message').textContent = messages[score];
+    }
+
+    function retryQuiz() {
+      score = 0;
+      answered = {};
+      document.getElementById('score-box').classList.remove('visible');
+      document.getElementById('progress-bar').style.width = '0%';
+      for (let i = 1; i <= 10; i++) {
+        const qEl = document.getElementById('q' + i);
+        qEl.classList.remove('active');
+        qEl.querySelectorAll('.option').forEach(opt => {
+          opt.disabled = false;
+          opt.className = 'option';
+        });
+        document.getElementById('feedback-q' + i).className = 'feedback';
+        document.getElementById('next-q' + i).classList.remove('visible');
+      }
+      document.getElementById('q1').classList.add('active');
+    }
+  </script>
+</Layout>
