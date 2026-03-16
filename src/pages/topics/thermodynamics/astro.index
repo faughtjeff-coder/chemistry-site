@@ -1,0 +1,42 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const allArticles = import.meta.glob('./*.astro');
+const articleSlugs = Object.keys(allArticles)
+  .map(path => path.replace('./','').replace('.astro',''))
+  .filter(slug => slug !== 'index');
+---
+<Layout title="Thermodynamics" description="Chemistry articles about thermodynamics for all levels">
+  <style>
+    .page-header { background: #0C447C; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .page-title { font-size: 28px; font-weight: 600; color: #E6F1FB; margin-bottom: 8px; }
+    .page-desc { font-size: 15px; color: #B5D4F4; line-height: 1.6; }
+    .count { font-size: 13px; color: #B5D4F4; margin-top: 8px; }
+    .articles-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .article-card { background: white; border-radius: 12px; border: 0.5px solid #e0e0e0; padding: 1.25rem; text-decoration: none; color: inherit; display: block; }
+    .article-card:hover { border-color: #B5D4F4; }
+    .card-title { font-size: 15px; font-weight: 600; color: #1a1a2e; margin-bottom: 4px; text-transform: capitalize; }
+    .card-url { font-size: 12px; color: #888; }
+    .coming-soon { background: #E6F1FB; border-radius: 12px; padding: 2rem; text-align: center; color: #0C447C; font-size: 15px; margin-top: 16px; }
+  </style>
+  <div class="page-header">
+    <h1 class="page-title">Thermodynamics</h1>
+    <p class="page-desc">Energy, enthalpy, entropy — why some reactions release heat and others absorb it, and what drives chemical change.</p>
+    <div class="count">{articleSlugs.length} articles</div>
+  </div>
+  {articleSlugs.length > 0 ? (
+    <div class="articles-grid">
+      {articleSlugs.map((slug) => {
+        const title = slug.replace(/-/g, ' ');
+        return (
+          <a href={`/topics/thermodynamics/${slug}`} class="article-card">
+            <div class="card-title">{title}</div>
+            <div class="card-url">/topics/thermodynamics/{slug}</div>
+          </a>
+        );
+      })}
+    </div>
+  ) : (
+    <div class="coming-soon">Articles coming soon — check back next week!</div>
+  )}
+</Layout>
