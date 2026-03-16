@@ -1,0 +1,69 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Chemiluminescence in Glow Sticks" description="Discover how glow sticks create light through chemical reactions without heat - the fascinating world of chemiluminescence">
+  <style>
+    .article-header { background: #3C3489; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 999px; font-weight: 500; }
+    .article-title { font-size: 28px; font-weight: 600; color: #EEEDFE; line-height: 1.3; margin-bottom: 10px; }
+    .article-desc { font-size: 15px; color: #AFA9EC; line-height: 1.6; margin-bottom: 12px; }
+    .meta { font-size: 13px; color: #7F77DD; }
+    .equation-box { background: #26215C; border-radius: 12px; padding: 1.25rem; display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 2rem; flex-wrap: wrap; }
+    .eq-part { font-size: 18px; font-weight: 500; }
+    .eq-arrow { font-size: 14px; color: #7F77DD; }
+    .body-text { font-size: 16px; line-height: 1.8; color: #1a1a2e; margin-bottom: 1.5rem; }
+    .callout { background: #f5f5f5; border-left: 3px solid #FAC775; border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+    .callout-title { font-size: 14px; font-weight: 600; color: #1a1a2e; margin-bottom: 4px; }
+    .callout-text { font-size: 14px; color: #555; line-height: 1.6; }
+    .section-label { font-size: 11px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .video-link { display: block; background: #1a1a2e; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; text-decoration: none; text-align: center; }
+    .video-icon { font-size: 32px; margin-bottom: 8px; }
+    .video-title { font-size: 16px; font-weight: 600; color: #EEEDFE; margin-bottom: 6px; }
+    .video-subtitle { font-size: 13px; color: #AFA9EC; }
+    .research-links { display: flex; flex-direction: column; gap: 8px; margin-bottom: 2rem; }
+    .research-link { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border: 0.5px solid #e0e0e0; border-radius: 8px; text-decoration: none; color: inherit; }
+    .research-link:hover { border-color: #AFA9EC; background: #f9f9ff; }
+    .research-icon { width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; }
+    .research-title { font-size: 13px; font-weight: 500; color: #1a1a2e; }
+    .research-source { font-size: 11px; color: #888; margin-top: 2px; }
+    .research-arrow { margin-left: auto; color: #AFA9EC; font-size: 14px; }
+    .topic-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .topic-tag { font-size: 12px; padding: 5px 12px; border-radius: 999px; }
+  </style>
+
+  <div class="article-header">
+    <div class="tags">
+      <span class="tag" style="background:#FAC775;color:#412402;">Reaction of the week</span>
+      <span class="tag" style="background:#E1F5EE;color:#085041;">Chemiluminescence</span>
+    </div>
+    <h1 class="article-title">The Glowing Chemistry Behind Glow Sticks</h1>
+    <p class="article-desc">Ever wonder how glow sticks create such brilliant light without any heat? Dive into the fascinating world of chemiluminescence and discover the chemical magic that makes these party favorites glow.</p>
+    <div class="meta">8 min read · Includes video · 3 research links</div>
+  </div>
+
+  <div class="section-label">The reaction</div>
+  <div class="equation-box">
+    <span class="eq-part" style="color:#AFA9EC;">Phenyl oxalate ester + H₂O₂ + Fluorescent dye</span>
+    <span class="eq-arrow">→</span>
+    <span class="eq-part" style="color:#9FE1CB;">Phenol + CO₂ + Light + Excited dye molecules</span>
+  </div>
+
+  <p class="body-text">When you crack a glow stick and watch it burst into vibrant light, you're witnessing one of chemistry's most captivating phenomena: chemiluminescence. Unlike the light from a bulb or candle, this ethereal glow is produced through a chemical reaction that converts chemical energy directly into light energy, with virtually no heat produced in the process.</p>
+  
+  <p class="body-text">Inside every glow stick are two separate chambers containing different chemicals that are just waiting to meet. The main chamber contains a phenyl oxalate ester (like CPPO - bis(2,4,6-trichlorophenyl) oxalate) dissolved in a solvent, along with a fluorescent dye that determines the color. The smaller inner vial contains hydrogen peroxide. When you bend the glow stick, you break this inner vial, allowing the chemicals to mix and the magic to begin.</p>
+
+  <div class="callout">
+    <div class="callout-title">What Makes Chemiluminescence Special?</div>
+    <div class="callout-text">Chemiluminescence is often called "cold light" because unlike incandescent bulbs that waste most energy as heat, this reaction converts nearly 100% of the chemical energy into light. This incredible efficiency makes it perfect for emergency lighting and situations where heat would be dangerous.</div>
+  </div>
+
+  <p class="body-text">The reaction begins when the phenyl oxalate ester reacts with hydrogen peroxide in the presence of a base catalyst. This creates an unstable intermediate compound that quickly breaks down, releasing energy. This energy is transferred to the fluorescent dye molecules, exciting their electrons to higher energy levels. As these excited electrons return to their ground state, they release the excess energy as photons of light - creating that characteristic glow. Different dyes produce different colors: 9,10-diphenylanthracene creates blue light, while rubrene produces yellow, and rhodamine B creates red.</p>
+
+  <a href="https://www.youtube.com/results?search_query=glow+stick+chemiluminescence+chemistry+reaction" target="_blank" class="video-link">
+    <div class="video-icon">▶</div>
+    <div class="video-title">Watch on YouTube</div>
+    <div class="video-subtitle">See chemiluminescence in action and learn about the chemistry</div>
+  </a>
+
+  <div class="section-label">Go

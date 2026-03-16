@@ -1,0 +1,104 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Acids and Bases Quiz" description="Test your knowledge of acids and bases with this interactive chemistry quiz for high school students.">
+  <style>
+    .quiz-header { background: #26215C; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .quiz-title { font-size: 26px; font-weight: 600; color: #EEEDFE; margin-bottom: 8px; }
+    .quiz-meta { font-size: 14px; color: #AFA9EC; }
+    .question-box { background: white; border-radius: 12px; border: 0.5px solid #e0e0e0; padding: 2rem; margin-bottom: 1.5rem; display: none; }
+    .question-box.active { display: block; }
+    .question-number { font-size: 12px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+    .question-text { font-size: 18px; font-weight: 500; color: #1a1a2e; margin-bottom: 1.5rem; line-height: 1.5; }
+    .options { display: flex; flex-direction: column; gap: 10px; }
+    .option { background: #f5f5f5; border: 2px solid transparent; border-radius: 8px; padding: 12px 16px; font-size: 15px; color: #1a1a2e; cursor: pointer; text-align: left; font-family: inherit; }
+    .option:hover:not(:disabled) { border-color: #AFA9EC; }
+    .option.correct { background: #E1F5EE; border-color: #085041; color: #085041; }
+    .option.wrong { background: #FAECE7; border-color: #712B13; color: #712B13; }
+    .option.reveal { background: #E1F5EE; border-color: #085041; color: #085041; }
+    .feedback { margin-top: 1rem; padding: 0.75rem 1rem; border-radius: 8px; font-size: 14px; display: none; line-height: 1.5; }
+    .feedback.show { display: block; }
+    .feedback.correct { background: #E1F5EE; color: #085041; }
+    .feedback.wrong { background: #FAECE7; color: #712B13; }
+    .next-btn { margin-top: 1rem; background: #534AB7; color: white; border: none; padding: 10px 24px; border-radius: 8px; font-size: 15px; cursor: pointer; font-family: inherit; display: none; }
+    .next-btn.show { display: block; }
+    .progress { background: #f5f5f5; border-radius: 999px; height: 8px; margin-bottom: 2rem; overflow: hidden; }
+    .progress-bar { background: #534AB7; height: 100%; border-radius: 999px; transition: width 0.3s; }
+    .score-box { background: #26215C; border-radius: 12px; padding: 2rem; text-align: center; display: none; }
+    .score-box.show { display: block; }
+    .score-title { font-size: 22px; font-weight: 600; color: #EEEDFE; margin-bottom: 8px; }
+    .score-value { font-size: 48px; font-weight: 600; color: #FAC775; margin-bottom: 8px; }
+    .score-message { font-size: 15px; color: #AFA9EC; margin-bottom: 1.5rem; }
+    .retry-btn { background: #534AB7; color: white; border: none; padding: 10px 24px; border-radius: 8px; font-size: 15px; cursor: pointer; font-family: inherit; }
+  </style>
+
+  <div class="quiz-header">
+    <h1 class="quiz-title">Acids and Bases Quiz</h1>
+    <div class="quiz-meta">5 questions · Multiple choice · Instant feedback</div>
+  </div>
+
+  <div class="progress"><div class="progress-bar" id="progress-bar" style="width:0%"></div></div>
+  <div id="quiz-container"></div>
+  <div class="score-box" id="score-box">
+    <div class="score-title">Quiz complete!</div>
+    <div class="score-value" id="score-value"></div>
+    <div class="score-message" id="score-message"></div>
+    <button class="retry-btn" id="retry-btn">Try again</button>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        text: "What is the pH value of a neutral solution at 25°C?",
+        options: ["6", "7", "8", "9"],
+        correct: 1,
+        feedback: {
+          correct: "Correct! Pure water at 25°C has a pH of 7, which is considered neutral on the pH scale.",
+          wrong: "Incorrect. A neutral solution has a pH of 7. This is where the concentration of H⁺ ions equals the concentration of OH⁻ ions."
+        }
+      },
+      {
+        text: "Which of the following is a characteristic property of acids?",
+        options: ["They taste bitter", "They turn red litmus paper blue", "They have a pH greater than 7", "They release H⁺ ions in water"],
+        correct: 3,
+        feedback: {
+          correct: "Exactly right! Acids are defined by their ability to donate or release hydrogen ions (H⁺) when dissolved in water.",
+          wrong: "Not quite. Acids release H⁺ ions in water, taste sour (not bitter), turn blue litmus red, and have a pH less than 7."
+        }
+      },
+      {
+        text: "What happens when an acid and a base react together?",
+        options: ["They form a salt and water", "They form only water", "They form only a salt", "They do not react"],
+        correct: 0,
+        feedback: {
+          correct: "Perfect! This is called a neutralization reaction: acid + base → salt + water. For example, HCl + NaOH → NaCl + H₂O.",
+          wrong: "Incorrect. When an acid reacts with a base, they neutralize each other to form both a salt and water."
+        }
+      },
+      {
+        text: "Which solution would have the highest concentration of OH⁻ ions?",
+        options: ["pH = 2", "pH = 7", "pH = 9", "pH = 12"],
+        correct: 3,
+        feedback: {
+          correct: "Correct! pH 12 is strongly basic, meaning it has a very high concentration of OH⁻ ions and a very low concentration of H⁺ ions.",
+          wrong: "Remember that higher pH values indicate more basic solutions with higher OH⁻ concentrations. pH 12 is the most basic option."
+        }
+      },
+      {
+        text: "What color would red litmus paper turn when dipped in a basic solution?",
+        options: ["Red", "Blue", "Yellow", "Green"],
+        correct: 1,
+        feedback: {
+          correct: "That's right! Red litmus paper turns blue in basic solutions. This is a classic test for identifying bases.",
+          wrong: "Incorrect. Red litmus paper turns blue in basic solutions, while blue litmus paper turns red in acidic solutions."
+        }
+      }
+    ];
+
+    let score = 0;
+    let current = 0;
+    let answered = false;
+
+    function buildQuestion(index) {
+      const q = questions[index];
+      const div = document.createElement('div');
