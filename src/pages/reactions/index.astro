@@ -1,35 +1,36 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const reactions = await Astro.glob('./**/index.astro');
-const reactionPages = reactions.filter(r => !r.file.endsWith('reactions/index.astro'));
+const allReactions = import.meta.glob('./**/index.astro');
+const reactionSlugs = Object.keys(allReactions)
+  .map(path => path.replace('./','').replace('/index.astro',''))
+  .filter(slug => slug !== '' && !slug.includes('/'));
 ---
 <Layout title="Reactions" description="Dramatic chemistry reactions explained at high school level">
   <style>
     .page-header { background: #3C3489; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
     .page-title { font-size: 28px; font-weight: 600; color: #EEEDFE; margin-bottom: 8px; }
     .page-desc { font-size: 15px; color: #AFA9EC; line-height: 1.6; }
+    .count { font-size: 13px; color: #AFA9EC; margin-top: 8px; }
     .reactions-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
     .reaction-card { background: white; border-radius: 12px; border: 0.5px solid #e0e0e0; overflow: hidden; text-decoration: none; color: inherit; display: block; }
     .reaction-card:hover { border-color: #AFA9EC; }
     .card-img { height: 100px; display: flex; align-items: center; justify-content: center; background: #3C3489; }
     .card-body { padding: 1rem; }
-    .card-title { font-size: 16px; font-weight: 600; color: #1a1a2e; margin-bottom: 6px; }
+    .card-title { font-size: 16px; font-weight: 600; color: #1a1a2e; margin-bottom: 6px; text-transform: capitalize; }
     .card-url { font-size: 12px; color: #888; }
     .coming-soon { background: #EEEDFE; border-radius: 12px; padding: 2rem; text-align: center; color: #534AB7; font-size: 15px; margin-top: 16px; }
-    .count { font-size: 13px; color: #AFA9EC; margin-top: 8px; }
   </style>
 
   <div class="page-header">
     <h1 class="page-title">Reaction articles</h1>
     <p class="page-desc">One dramatic reaction per article — explained clearly with videos, equations, and links to real research. New reaction every week.</p>
-    <div class="count">{reactionPages.length} reactions and counting</div>
+    <div class="count">{reactionSlugs.length} reactions and counting</div>
   </div>
 
   <div class="reactions-grid">
-    {reactionPages.map((reaction) => {
-      const slug = reaction.file.split('/reactions/')[1].replace('/index.astro', '');
-      const title = slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    {reactionSlugs.map((slug) => {
+      const title = slug.replace(/-/g, ' ');
       return (
         <a href={`/reactions/${slug}`} class="reaction-card">
           <div class="card-img">
@@ -51,7 +52,7 @@ const reactionPages = reactions.filter(r => !r.file.endsWith('reactions/index.as
     })}
   </div>
 
-  {reactionPages.length === 0 && (
+  {reactionSlugs.length === 0 && (
     <div class="coming-soon">No reactions yet — check back soon!</div>
   )}
 
