@@ -1,0 +1,86 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Ionic bonds explained" description="What ionic bonds are, how they form, and why table salt is a perfect example">
+  <style>
+    .article-header { background: #085041; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 999px; font-weight: 500; }
+    .article-title { font-size: 28px; font-weight: 600; color: #E1F5EE; line-height: 1.3; margin-bottom: 10px; }
+    .article-desc { font-size: 15px; color: #9FE1CB; line-height: 1.6; }
+    .body-text { font-size: 16px; line-height: 1.8; color: #1a1a2e; margin-bottom: 1.5rem; }
+    .callout { background: #f5f5f5; border-left: 3px solid #5DCAA5; border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+    .callout-title { font-size: 14px; font-weight: 600; color: #1a1a2e; margin-bottom: 4px; }
+    .callout-text { font-size: 14px; color: #555; line-height: 1.6; }
+    .section-title { font-size: 20px; font-weight: 600; color: #085041; margin-bottom: 12px; margin-top: 2rem; }
+    .transfer-box { background: #085041; border-radius: 12px; padding: 1.25rem; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .atom { text-align: center; padding: 1rem 1.5rem; border-radius: 8px; }
+    .atom-name { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+    .atom-detail { font-size: 12px; opacity: 0.8; }
+    .arrow { font-size: 24px; color: #FAC775; }
+    .topic-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 2rem; }
+    .topic-tag { font-size: 12px; padding: 5px 12px; border-radius: 999px; }
+  </style>
+
+  <div class="article-header">
+    <div class="tags">
+      <span class="tag" style="background:#FAEEDA;color:#412402;">General</span>
+      <span class="tag" style="background:#E1F5EE;color:#085041;">Bonding</span>
+    </div>
+    <h1 class="article-title">Ionic bonds explained</h1>
+    <p class="article-desc">When atoms transfer electrons to each other, something remarkable happens — they become oppositely charged and stick together. That's an ionic bond.</p>
+  </div>
+
+  <p class="body-text">
+    Not all atoms are equally happy with their electrons. Some atoms desperately want to lose electrons, others desperately want to gain them. When these two types meet, an electron transfer happens — and the result is an ionic bond.
+  </p>
+
+  <h2 class="section-title">How ionic bonds form — sodium and chlorine</h2>
+
+  <div class="transfer-box">
+    <div class="atom" style="background:#534AB7;">
+      <div class="atom-name" style="color:#FAC775;">Na</div>
+      <div class="atom-detail" style="color:#AFA9EC;">Sodium</div>
+      <div class="atom-detail" style="color:#AFA9EC;">1 outer electron</div>
+      <div class="atom-detail" style="color:#AFA9EC;">wants to lose it</div>
+    </div>
+    <div class="arrow">→ e⁻ →</div>
+    <div class="atom" style="background:#0F6E56;">
+      <div class="atom-name" style="color:#FAC775;">Cl</div>
+      <div class="atom-detail" style="color:#9FE1CB;">Chlorine</div>
+      <div class="atom-detail" style="color:#9FE1CB;">7 outer electrons</div>
+      <div class="atom-detail" style="color:#9FE1CB;">wants one more</div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="atom" style="background:#633806;">
+      <div class="atom-name" style="color:#FAC775;">NaCl</div>
+      <div class="atom-detail" style="color:#FAC775;">Table salt</div>
+      <div class="atom-detail" style="color:#FAC775;">Na⁺ + Cl⁻</div>
+      <div class="atom-detail" style="color:#FAC775;">ionic bond</div>
+    </div>
+  </div>
+
+  <p class="body-text">
+    Sodium has one electron in its outer shell — it is much more stable with zero outer electrons. Chlorine has seven outer electrons — it is much more stable with eight. When they meet, sodium gives its outer electron to chlorine. Now sodium has a positive charge (Na⁺) and chlorine has a negative charge (Cl⁻). Opposite charges attract and they stick together forming sodium chloride — table salt.
+  </p>
+
+  <div class="callout">
+    <div class="callout-title">Key concept: the octet rule</div>
+    <div class="callout-text">Atoms are most stable when they have 8 electrons in their outer shell — a full shell. This is called the octet rule. Ionic bonding happens when one atom can achieve a full shell by giving electrons to another atom that also needs a full shell. Both atoms end up more stable than they were before.</div>
+  </div>
+
+  <p class="body-text">
+    Ionic compounds form crystal lattice structures — a repeating three-dimensional grid of positive and negative ions. This structure is why table salt forms cubic crystals and why ionic compounds typically have high melting points. The electrostatic forces between all those ions in the lattice are very strong and require a lot of energy to break.
+  </p>
+
+  <p class="body-text">
+    Ionic compounds conduct electricity when dissolved in water or melted because the ions become free to move and carry charge. In solid form they cannot conduct because the ions are locked in place in the lattice.
+  </p>
+
+  <div class="topic-tags">
+    <span class="topic-tag" style="background:#E1F5EE;color:#085041;">Bonding</span>
+    <span class="topic-tag" style="background:#FAEEDA;color:#633806;">General</span>
+    <span class="topic-tag" style="background:#EEEDFE;color:#534AB7;">Ionic bonds</span>
+    <span class="topic-tag" style="background:#E6F1FB;color:#0C447C;">Octet rule</span>
+  </div>
+</Layout>

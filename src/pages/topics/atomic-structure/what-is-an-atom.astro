@@ -1,0 +1,80 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="What is an atom?" description="A beginner guide to atoms, protons, neutrons and electrons">
+  <style>
+    .article-header { background: #26215C; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 999px; font-weight: 500; }
+    .article-title { font-size: 28px; font-weight: 600; color: #EEEDFE; line-height: 1.3; margin-bottom: 10px; }
+    .article-desc { font-size: 15px; color: #AFA9EC; line-height: 1.6; }
+    .body-text { font-size: 16px; line-height: 1.8; color: #1a1a2e; margin-bottom: 1.5rem; }
+    .callout { background: #f5f5f5; border-left: 3px solid #FAC775; border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+    .callout-title { font-size: 14px; font-weight: 600; color: #1a1a2e; margin-bottom: 4px; }
+    .callout-text { font-size: 14px; color: #555; line-height: 1.6; }
+    .section-title { font-size: 20px; font-weight: 600; color: #26215C; margin-bottom: 12px; margin-top: 2rem; }
+    .particle-box { background: #26215C; border-radius: 12px; padding: 1.25rem; margin-bottom: 2rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .particle { text-align: center; padding: 1rem; border-radius: 8px; }
+    .particle-name { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+    .particle-detail { font-size: 12px; opacity: 0.8; }
+    .topic-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 2rem; }
+    .topic-tag { font-size: 12px; padding: 5px 12px; border-radius: 999px; }
+  </style>
+
+  <div class="article-header">
+    <div class="tags">
+      <span class="tag" style="background:#FAEEDA;color:#412402;">Beginner</span>
+      <span class="tag" style="background:#EEEDFE;color:#26215C;">Atomic Structure</span>
+    </div>
+    <h1 class="article-title">What is an atom?</h1>
+    <p class="article-desc">Everything you can see, touch, and breathe is made of atoms. Here's what they actually are and what's inside them.</p>
+  </div>
+
+  <p class="body-text">
+    Atoms are the smallest units of matter that retain the chemical properties of an element. They are unimaginably small — a single strand of human hair is about a million atoms wide. Despite their size, atoms have an internal structure made of even smaller particles.
+  </p>
+
+  <h2 class="section-title">The three particles inside an atom</h2>
+
+  <div class="particle-box">
+    <div class="particle" style="background:#534AB7;">
+      <div class="particle-name" style="color:#FAC775;">Proton</div>
+      <div class="particle-detail" style="color:#AFA9EC;">Positive charge (+1)</div>
+      <div class="particle-detail" style="color:#AFA9EC;">Found in nucleus</div>
+    </div>
+    <div class="particle" style="background:#3C3489;">
+      <div class="particle-name" style="color:#9FE1CB;">Neutron</div>
+      <div class="particle-detail" style="color:#AFA9EC;">No charge (0)</div>
+      <div class="particle-detail" style="color:#AFA9EC;">Found in nucleus</div>
+    </div>
+    <div class="particle" style="background:#085041;">
+      <div class="particle-name" style="color:#FAC775;">Electron</div>
+      <div class="particle-detail" style="color:#9FE1CB;">Negative charge (-1)</div>
+      <div class="particle-detail" style="color:#9FE1CB;">Orbits nucleus</div>
+    </div>
+  </div>
+
+  <p class="body-text">
+    The protons and neutrons cluster together in the center of the atom called the nucleus. The nucleus is incredibly dense — it contains almost all of the atom's mass but takes up only a tiny fraction of its volume. If an atom were the size of a football stadium, the nucleus would be the size of a marble at the center.
+  </p>
+
+  <p class="body-text">
+    Electrons occupy the space around the nucleus in regions called electron shells or orbitals. They move so fast that they effectively form a cloud around the nucleus. Electrons are much lighter than protons and neutrons — about 1800 times lighter.
+  </p>
+
+  <div class="callout">
+    <div class="callout-title">Key concept: atomic number</div>
+    <div class="callout-text">The number of protons in an atom defines what element it is. Carbon always has 6 protons. Oxygen always has 8. This number is called the atomic number and is unique to each element. Change the number of protons and you have a completely different element.</div>
+  </div>
+
+  <p class="body-text">
+    In a neutral atom the number of protons equals the number of electrons — the positive and negative charges balance out. If an atom gains or loses electrons it becomes an ion — a charged particle. This is the basis of ionic bonding and many chemical reactions.
+  </p>
+
+  <div class="topic-tags">
+    <span class="topic-tag" style="background:#EEEDFE;color:#534AB7;">Atomic structure</span>
+    <span class="topic-tag" style="background:#FAEEDA;color:#633806;">Beginner</span>
+    <span class="topic-tag" style="background:#E1F5EE;color:#085041;">Protons</span>
+    <span class="topic-tag" style="background:#E6F1FB;color:#0C447C;">Electrons</span>
+  </div>
+</Layout>
