@@ -1,0 +1,102 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="The Thermite Reaction" description="Discover the explosive chemistry behind the thermite reaction and its real-world applications">
+  <style>
+    .article-header { background: #3C3489; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 999px; font-weight: 500; }
+    .article-title { font-size: 28px; font-weight: 600; color: #EEEDFE; line-height: 1.3; margin-bottom: 10px; }
+    .article-desc { font-size: 15px; color: #AFA9EC; line-height: 1.6; margin-bottom: 12px; }
+    .meta { font-size: 13px; color: #7F77DD; }
+    .equation-box { background: #26215C; border-radius: 12px; padding: 1.25rem; display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 2rem; flex-wrap: wrap; }
+    .eq-part { font-size: 18px; font-weight: 500; }
+    .eq-arrow { font-size: 14px; color: #7F77DD; }
+    .body-text { font-size: 16px; line-height: 1.8; color: #1a1a2e; margin-bottom: 1.5rem; }
+    .callout { background: #f5f5f5; border-left: 3px solid #FAC775; border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+    .callout-title { font-size: 14px; font-weight: 600; color: #1a1a2e; margin-bottom: 4px; }
+    .callout-text { font-size: 14px; color: #555; line-height: 1.6; }
+    .section-label { font-size: 11px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .video-link { display: block; background: #1a1a2e; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; text-decoration: none; text-align: center; }
+    .video-icon { font-size: 32px; margin-bottom: 8px; }
+    .video-title { font-size: 16px; font-weight: 600; color: #EEEDFE; margin-bottom: 6px; }
+    .video-subtitle { font-size: 13px; color: #AFA9EC; }
+    .research-links { display: flex; flex-direction: column; gap: 8px; margin-bottom: 2rem; }
+    .research-link { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border: 0.5px solid #e0e0e0; border-radius: 8px; text-decoration: none; color: inherit; }
+    .research-link:hover { border-color: #AFA9EC; background: #f9f9ff; }
+    .research-icon { width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; }
+    .research-title { font-size: 13px; font-weight: 500; color: #1a1a2e; }
+    .research-source { font-size: 11px; color: #888; margin-top: 2px; }
+    .research-arrow { margin-left: auto; color: #AFA9EC; font-size: 14px; }
+    .topic-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .topic-tag { font-size: 12px; padding: 5px 12px; border-radius: 999px; }
+  </style>
+
+  <div class="article-header">
+    <div class="tags">
+      <span class="tag" style="background:#FAC775;color:#412402;">Reaction of the week</span>
+      <span class="tag" style="background:#E1F5EE;color:#085041;">Redox Reaction</span>
+    </div>
+    <h1 class="article-title">The Thermite Reaction: Chemistry That Burns Through Steel</h1>
+    <p class="article-desc">Explore the spectacular thermite reaction that reaches temperatures of 2500°C and has practical applications from welding train tracks to emergency demolition</p>
+    <div class="meta">8 min read · Includes video · 3 research links</div>
+  </div>
+
+  <div class="section-label">The reaction</div>
+  <div class="equation-box">
+    <span class="eq-part" style="color:#AFA9EC;">2Al + Fe₂O₃</span>
+    <span class="eq-arrow">→</span>
+    <span class="eq-part" style="color:#9FE1CB;">Al₂O₃ + 2Fe + Heat</span>
+  </div>
+
+  <p class="body-text">The thermite reaction is one of the most dramatic chemical reactions you'll encounter in chemistry. When aluminum powder meets iron oxide (rust) and gets a spark of ignition, the result is an incredibly exothermic reaction that produces molten iron and reaches temperatures hot enough to melt through steel. This isn't just a flashy demonstration—it's a reaction with real-world applications that has been used for over a century.</p>
+  <p class="body-text">At its core, the thermite reaction is a redox (reduction-oxidation) reaction where aluminum acts as the reducing agent and iron oxide is reduced to metallic iron. The aluminum is oxidized, losing electrons to form aluminum oxide, while the iron in the iron oxide gains electrons and is reduced to pure metallic iron. The reaction is so exothermic that it produces enough heat to keep the iron molten for several minutes after the reaction completes.</p>
+
+  <div class="callout">
+    <div class="callout-title">Why is the thermite reaction so exothermic?</div>
+    <div class="callout-text">The thermite reaction releases approximately 850 kJ/mol of energy because aluminum has a much higher affinity for oxygen than iron does. When aluminum "steals" oxygen from iron oxide, it forms very stable aluminum oxide bonds, releasing enormous amounts of energy in the process. This is why aluminum is such a powerful reducing agent.</div>
+  </div>
+
+  <p class="body-text">The practical applications of the thermite reaction are fascinating and varied. Railroad workers use thermite welding (called exothermic welding) to join railway tracks together, creating seamless connections that can withstand the massive forces from passing trains. The reaction has also been used in military applications, emergency demolition, and even in some industrial welding processes where traditional methods aren't feasible. The reaction requires no external power source and can work in any weather condition, making it incredibly versatile for field applications.</p>
+
+  <a href="https://www.youtube.com/results?search_query=thermite+reaction+demonstration+chemistry" target="_blank" class="video-link">
+    <div class="video-icon">▶</div>
+    <div class="video-title">Watch on YouTube</div>
+    <div class="video-subtitle">Search for thermite reaction demonstrations and explanations</div>
+  </a>
+
+  <div class="section-label">Go deeper</div>
+  <div class="research-links">
+    <a href="https://chem.libretexts.org/Bookshelves/General_Chemistry/Map%3A_Chemistry_-_The_Central_Science_(Brown_et_al.)/20%3A_Electrochemistry/20.09%3A_Electrolysis" target="_blank" class="research-link">
+      <div class="research-icon" style="background:#E6F1FB;">📄</div>
+      <div>
+        <div class="research-title">Redox Reactions and Electrochemistry</div>
+        <div class="research-source">Chemistry LibreTexts</div>
+      </div>
+      <span class="research-arrow">→</span>
+    </a>
+    <a href="https://www.khanacademy.org/science/ap-chemistry-beta/x2eef969c74e0d802:chemical-reactions/x2eef969c74e0d802:oxidation-reduction-redox-reactions/a/oxidation-reduction-redox-reactions" target="_blank" class="research-link">
+      <div class="research-icon" style="background:#E1F5EE;">📄</div>
+      <div>
+        <div class="research-title">Introduction to Oxidation-Reduction Reactions</div>
+        <div class="research-source">Khan Academy</div>
+      </div>
+      <span class="research-arrow">→</span>
+    </a>
+    <a href="https://pubs.acs.org/doi/10.1021/ed083p297" target="_blank" class="research-link">
+      <div class="research-icon" style="background:#EEEDFE;">📄</div>
+      <div>
+        <div class="research-title">Thermodynamics of the Thermite Reaction</div>
+        <div class="research-source">Journal of Chemical Education</div>
+      </div>
+      <span class="research-arrow">→</span>
+    </a>
+  </div>
+
+  <div class="section-label">Topics</div>
+  <div class="topic-tags">
+    <span class="topic-tag" style="background:#EEEDFE;color:#534AB7;">Redox reactions</span>
+    <span class="topic-tag" style="background:#E1F5EE;color:#085041;">Thermodynamics</span>
+    <span class="topic-tag" style="background:#FAEEDA;color:#633806;">Industrial chemistry</span>
+  </div>
+</Layout>

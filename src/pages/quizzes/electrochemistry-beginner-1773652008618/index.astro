@@ -1,0 +1,194 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Electrochemistry Basics Quiz" description="Test your understanding of fundamental electrochemistry concepts including batteries, electrolysis, and redox reactions.">
+  <style>
+    .quiz-header { background: #26215C; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .quiz-title { font-size: 26px; font-weight: 600; color: #EEEDFE; margin-bottom: 8px; }
+    .quiz-meta { font-size: 14px; color: #AFA9EC; }
+    .question-box { background: white; border-radius: 12px; border: 0.5px solid #e0e0e0; padding: 2rem; margin-bottom: 1.5rem; display: none; }
+    .question-box.active { display: block; }
+    .question-number { font-size: 12px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+    .question-text { font-size: 18px; font-weight: 500; color: #1a1a2e; margin-bottom: 1.5rem; line-height: 1.5; }
+    .options { display: flex; flex-direction: column; gap: 10px; }
+    .option { background: #f5f5f5; border: 2px solid transparent; border-radius: 8px; padding: 12px 16px; font-size: 15px; color: #1a1a2e; cursor: pointer; text-align: left; font-family: inherit; }
+    .option:hover:not(:disabled) { border-color: #AFA9EC; }
+    .option.correct { background: #E1F5EE; border-color: #085041; color: #085041; }
+    .option.wrong { background: #FAECE7; border-color: #712B13; color: #712B13; }
+    .option.reveal { background: #E1F5EE; border-color: #085041; color: #085041; }
+    .feedback { margin-top: 1rem; padding: 0.75rem 1rem; border-radius: 8px; font-size: 14px; display: none; line-height: 1.5; }
+    .feedback.show { display: block; }
+    .feedback.correct { background: #E1F5EE; color: #085041; }
+    .feedback.wrong { background: #FAECE7; color: #712B13; }
+    .next-btn { margin-top: 1rem; background: #534AB7; color: white; border: none; padding: 10px 24px; border-radius: 8px; font-size: 15px; cursor: pointer; font-family: inherit; display: none; }
+    .next-btn.show { display: block; }
+    .progress { background: #f5f5f5; border-radius: 999px; height: 8px; margin-bottom: 2rem; overflow: hidden; }
+    .progress-bar { background: #534AB7; height: 100%; border-radius: 999px; transition: width 0.3s; }
+    .score-box { background: #26215C; border-radius: 12px; padding: 2rem; text-align: center; display: none; }
+    .score-box.show { display: block; }
+    .score-title { font-size: 22px; font-weight: 600; color: #EEEDFE; margin-bottom: 8px; }
+    .score-value { font-size: 48px; font-weight: 600; color: #FAC775; margin-bottom: 8px; }
+    .score-message { font-size: 15px; color: #AFA9EC; margin-bottom: 1.5rem; }
+    .retry-btn { background: #534AB7; color: white; border: none; padding: 10px 24px; border-radius: 8px; font-size: 15px; cursor: pointer; font-family: inherit; }
+  </style>
+
+  <div class="quiz-header">
+    <h1 class="quiz-title">Electrochemistry Basics Quiz</h1>
+    <div class="quiz-meta">5 questions · Multiple choice · Instant feedback</div>
+  </div>
+
+  <div class="progress"><div class="progress-bar" id="progress-bar" style="width:0%"></div></div>
+  <div id="quiz-container"></div>
+  <div class="score-box" id="score-box">
+    <div class="score-title">Quiz complete!</div>
+    <div class="score-value" id="score-value"></div>
+    <div class="score-message" id="score-message"></div>
+    <button class="retry-btn" id="retry-btn">Try again</button>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        text: "What is electrochemistry?",
+        options: [
+          "The study of chemical reactions that involve the transfer of electrons",
+          "The study of how chemicals dissolve in water",
+          "The study of gas reactions at high temperatures",
+          "The study of organic compound structures"
+        ],
+        correct: 0,
+        feedback: {
+          correct: "Correct! Electrochemistry is the branch of chemistry that deals with chemical reactions involving electron transfer, which creates electrical energy or uses electrical energy to drive reactions.",
+          wrong: "Not quite. Electrochemistry specifically focuses on chemical reactions that involve the transfer of electrons between substances, creating or using electrical energy."
+        }
+      },
+      {
+        text: "In a battery, what happens at the anode?",
+        options: [
+          "Reduction occurs and electrons are gained",
+          "Oxidation occurs and electrons are lost",
+          "No chemical reaction takes place",
+          "Both oxidation and reduction occur simultaneously"
+        ],
+        correct: 1,
+        feedback: {
+          correct: "Excellent! At the anode, oxidation occurs, meaning electrons are lost. Remember the mnemonic 'An Ox' (Anode Oxidation) to help you remember this.",
+          wrong: "Incorrect. At the anode, oxidation occurs, which means electrons are lost. The cathode is where reduction (gaining electrons) takes place."
+        }
+      },
+      {
+        text: "What is electrolysis?",
+        options: [
+          "The spontaneous production of electricity from chemical reactions",
+          "The process of using electrical energy to drive non-spontaneous chemical reactions",
+          "The measurement of electrical conductivity in solutions",
+          "The study of how metals corrode in air"
+        ],
+        correct: 1,
+        feedback: {
+          correct: "Perfect! Electrolysis uses electrical energy to force non-spontaneous chemical reactions to occur, like splitting water into hydrogen and oxygen gases.",
+          wrong: "Not correct. Electrolysis is the process where electrical energy is used to drive chemical reactions that wouldn't happen spontaneously on their own."
+        }
+      },
+      {
+        text: "Which of the following is NOT a common application of electrochemistry?",
+        options: [
+          "Car batteries",
+          "Electroplating jewelry",
+          "Photosynthesis in plants",
+          "Corrosion prevention"
+        ],
+        correct: 2,
+        feedback: {
+          correct: "Correct! Photosynthesis is a biological process that converts light energy into chemical energy, but it doesn't involve the direct transfer of electrons like electrochemical processes do.",
+          wrong: "Actually, photosynthesis is not an electrochemical process. While car batteries, electroplating, and corrosion prevention all involve electron transfer reactions, photosynthesis is a biological light-to-chemical energy conversion process."
+        }
+      },
+      {
+        text: "In an electrochemical cell, electrons flow from:",
+        options: [
+          "Cathode to anode through the external circuit",
+          "Anode to cathode through the external circuit",
+          "Positive terminal to negative terminal inside the cell",
+          "The electrolyte to the electrodes"
+        ],
+        correct: 1,
+        feedback: {
+          correct: "Exactly right! Electrons always flow from the anode (where oxidation occurs) to the cathode (where reduction occurs) through the external circuit, providing useful electrical energy.",
+          wrong: "Incorrect. Electrons flow from the anode to the cathode through the external circuit. This electron flow is what creates the electrical current we can use to power devices."
+        }
+      }
+    ];
+
+    let score = 0;
+    let current = 0;
+    let answered = false;
+
+    function buildQuestion(index) {
+      const q = questions[index];
+      const div = document.createElement('div');
+      div.className = 'question-box active';
+      div.id = 'question-box';
+      div.innerHTML = `
+        <div class="question-number">Question ${index + 1} of ${questions.length}</div>
+        <div class="question-text">${q.text}</div>
+        <div class="options" id="options-box">
+          ${q.options.map((opt, i) => `<button class="option" data-index="${i}">${opt}</button>`).join('')}
+        </div>
+        <div class="feedback" id="feedback-box"></div>
+        <button class="next-btn" id="next-btn">${index === questions.length - 1 ? 'See my score →' : 'Next question →'}</button>
+      `;
+      return div;
+    }
+
+    function showQuestion(index) {
+      answered = false;
+      const container = document.getElementById('quiz-container');
+      container.innerHTML = '';
+      const qDiv = buildQuestion(index);
+      container.appendChild(qDiv);
+      document.getElementById('options-box').querySelectorAll('.option').forEach(btn => {
+        btn.addEventListener('click', function() {
+          if (answered) return;
+          answered = true;
+          const chosen = parseInt(this.dataset.index);
+          const correct = questions[index].correct;
+          const allOptions = document.getElementById('options-box').querySelectorAll('.option');
+          allOptions.forEach(b => b.disabled = true);
+          const fb = document.getElementById('feedback-box');
+          if (chosen === correct) {
+            this.classList.add('correct');
+            fb.textContent = questions[index].feedback.correct;
+            fb.className = 'feedback show correct';
+            score++;
+          } else {
+            this.classList.add('wrong');
+            allOptions[correct].classList.add('reveal');
+            fb.textContent = questions[index].feedback.wrong;
+            fb.className = 'feedback show wrong';
+          }
+          document.getElementById('next-btn').classList.add('show');
+          document.getElementById('progress-bar').style.width = ((index + 1) / questions.length * 100) + '%';
+        });
+      });
+      document.getElementById('next-btn').addEventListener('click', function() {
+        if (index === questions.length - 1) { showScore(); } else { current++; showQuestion(current); }
+      });
+    }
+
+    function showScore() {
+      document.getElementById('quiz-container').innerHTML = '';
+      const scoreBox = document.getElementById('score-box');
+      scoreBox.classList.add('show');
+      document.getElementById('score-value').textContent = score + '/' + questions.length;
+      const pct = score / questions.length;
+      let msg = pct === 1 ? 'Perfect score!' : pct >= 0.8 ? 'Excellent work!' : pct >= 0.6 ? 'Good work! Review a few topics.' : 'Keep practicing! Read the article and try again.';
+      document.getElementById('score-message').textContent = msg;
+    }
+
+    document.getElementById('retry-btn').addEventListener('click', function() {
+      score = 0; current = 0;
+      document.getElementById('score-box').classList.remove('show');
+      document.getElementById('progress-bar').style.width = '0%';
+      showQuestion(0);
+    });
