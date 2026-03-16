@@ -24,8 +24,6 @@ import Layout from '../../../layouts/Layout.astro';
     .fact-dot { width: 8px; height: 8px; border-radius: 50%; background: #534AB7; flex-shrink: 0; margin-top: 6px; }
     .fact-text { font-size: 15px; color: #1a1a2e; line-height: 1.6; }
     .fact-text strong { color: #26215C; }
-    .diagram-box { background: #26215C; border-radius: 12px; padding: 2rem; margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: center; }
-    .diagram-caption { font-size: 13px; color: #888; text-align: center; margin-bottom: 2rem; }
     .summary-box { background: #534AB7; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
     .summary-title { font-size: 13px; font-weight: 600; color: #FAC775; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
     .summary-text { font-size: 15px; color: #EEEDFE; line-height: 1.7; }
@@ -36,7 +34,7 @@ import Layout from '../../../layouts/Layout.astro';
   <div class="article-header">
     <div class="tags">
       <span class="tag" style="background:#FAEEDA;color:#412402;">Beginner</span>
-      <span class="tag" style="background:#E1F5EE;color:#085041;">Atomic Structure</span>
+      <span class="tag" style="background:#EEEDFE;color:#26215C;">Atomic Structure</span>
     </div>
     <h1 class="article-title">What is an atom?</h1>
     <div class="objective"><strong>Learning objective:</strong> Describe the structure of an atom and identify the three main particles inside it.</div>
@@ -105,30 +103,6 @@ import Layout from '../../../layouts/Layout.astro';
       <div class="fact-text">In a neutral atom, the number of protons equals the number of electrons. The charges balance out.</div>
     </div>
   </div>
-
-  <div class="diagram-box">
-    <svg width="340" height="260" viewBox="0 0 340 260">
-      <circle cx="170" cy="130" r="35" fill="#534AB7"/>
-      <circle cx="158" cy="122" r="9" fill="#FAC775"/>
-      <circle cx="182" cy="122" r="9" fill="#FAC775"/>
-      <circle cx="170" cy="141" r="9" fill="#888"/>
-      <text x="158" y="126" text-anchor="middle" font-size="8" fill="#26215C" font-weight="bold">p+</text>
-      <text x="182" y="126" text-anchor="middle" font-size="8" fill="#26215C" font-weight="bold">p+</text>
-      <text x="170" y="145" text-anchor="middle" font-size="8" fill="white" font-weight="bold">n</text>
-      <circle cx="170" cy="130" r="65" fill="none" stroke="#AFA9EC" stroke-width="2"/>
-      <circle cx="170" cy="130" r="100" fill="none" stroke="#5DCAA5" stroke-width="2"/>
-      <circle cx="170" cy="65" r="7" fill="#AFA9EC"/>
-      <circle cx="235" cy="130" r="7" fill="#5DCAA5"/>
-      <circle cx="105" cy="130" r="7" fill="#5DCAA5"/>
-      <text x="170" y="62" text-anchor="middle" font-size="11" fill="#AFA9EC" dy="-10">electron (e⁻)</text>
-      <text x="255" y="134" font-size="11" fill="#5DCAA5">electron (e⁻)</text>
-      <text x="170" y="185" text-anchor="middle" font-size="11" fill="#AFA9EC">shell 1</text>
-      <text x="170" y="218" text-anchor="middle" font-size="11" fill="#5DCAA5">shell 2</text>
-      <text x="170" y="130" text-anchor="middle" font-size="11" fill="#EEEDFE" dy="60">nucleus</text>
-      <line x1="170" y1="148" x2="170" y2="158" stroke="#EEEDFE" stroke-width="1"/>
-    </svg>
-  </div>
-  <p class="diagram-caption">A helium atom — 2 protons and 2 neutrons in the nucleus, 2 electrons in shell 1</p>
 
   <div class="summary-box">
     <div class="summary-title">Summary</div>
