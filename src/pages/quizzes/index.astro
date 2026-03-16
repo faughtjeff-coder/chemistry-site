@@ -1,36 +1,48 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+const allQuizzes = import.meta.glob('./**/index.astro');
+const quizSlugs = Object.keys(allQuizzes)
+  .map(path => path.replace('./','').replace('/index.astro',''))
+  .filter(slug => slug !== '' && !slug.includes('/'));
 ---
 <Layout title="Quizzes" description="Test your chemistry knowledge with interactive quizzes">
   <style>
     .page-header { background: #27500A; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
     .page-title { font-size: 28px; font-weight: 600; color: #EAF3DE; margin-bottom: 8px; }
     .page-desc { font-size: 15px; color: #C0DD97; line-height: 1.6; }
-    .quiz-card { background: white; border-radius: 12px; border: 0.5px solid #e0e0e0; padding: 2rem; margin-bottom: 1.5rem; }
-    .quiz-title { font-size: 18px; font-weight: 600; color: #26215C; margin-bottom: 6px; }
-    .quiz-meta { font-size: 13px; color: #888; margin-bottom: 1.5rem; }
-    .quiz-tag { font-size: 11px; padding: 2px 8px; border-radius: 999px; margin-right: 6px; }
-    .start-btn { background: #27500A; color: white; border: none; padding: 10px 24px; border-radius: 8px; font-size: 15px; cursor: pointer; font-family: inherit; }
-    .start-btn:hover { background: #3B6D11; }
+    .count { font-size: 13px; color: #C0DD97; margin-top: 8px; }
+    .quiz-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .quiz-card { background: white; border-radius: 12px; border: 0.5px solid #e0e0e0; padding: 1.5rem; text-decoration: none; color: inherit; display: block; }
+    .quiz-card:hover { border-color: #C0DD97; }
+    .quiz-title { font-size: 16px; font-weight: 600; color: #1a1a2e; margin-bottom: 6px; text-transform: capitalize; }
+    .quiz-meta { font-size: 13px; color: #888; }
     .coming-soon { background: #EAF3DE; border-radius: 12px; padding: 2rem; text-align: center; color: #27500A; font-size: 15px; margin-top: 16px; }
   </style>
 
   <div class="page-header">
     <h1 class="page-title">Quizzes</h1>
     <p class="page-desc">Test your chemistry knowledge. New quizzes added every week across all topics and levels.</p>
+    <div class="count">{quizSlugs.length} quizzes and counting</div>
   </div>
 
-  <div class="quiz-card">
-    <div class="quiz-title">Atomic Structure — Beginner</div>
-    <div class="quiz-meta">
-      <span class="quiz-tag" style="background:#FAEEDA;color:#633806;">Beginner</span>
-      <span class="quiz-tag" style="background:#EEEDFE;color:#534AB7;">Atomic Structure</span>
-      10 questions · Multiple choice
-    </div>
-    <button class="start-btn" onclick="window.location.href='/quizzes/atomic-structure-beginner'">Start quiz →</button>
+  <div class="quiz-grid">
+    {quizSlugs.map((slug) => {
+      const title = slug.replace(/-/g, ' ').replace(/\d+/g, '').trim();
+      return (
+        <a href={`/quizzes/${slug}`} class="quiz-card">
+          <div class="quiz-title">{title}</div>
+          <div class="quiz-meta">Multiple choice · Instant feedback</div>
+        </a>
+      );
+    })}
   </div>
 
-  <div class="coming-soon">
-    More quizzes added every week automatically. Check back soon!
+  {quizSlugs.length === 0 && (
+    <div class="coming-soon">No quizzes yet — check back soon!</div>
+  )}
+
+  <div class="coming-soon" style="margin-top:16px;">
+    New quizzes added every week automatically.
   </div>
 </Layout>
