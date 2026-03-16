@@ -176,4 +176,3 @@ const req = https.request(options, (res) => {
 req.on('error', (e) => console.error('Request error:', e));
 req.write(data);
 req.end();
-```
