@@ -1,0 +1,117 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Exothermic vs endothermic reactions" description="Learn the difference between exothermic and endothermic reactions with real examples">
+  <style>
+    .article-header { background: #0C447C; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 999px; font-weight: 500; }
+    .article-title { font-size: 28px; font-weight: 600; color: #E6F1FB; line-height: 1.3; margin-bottom: 10px; }
+    .objective { background: #185FA5; border-radius: 8px; padding: 0.75rem 1rem; font-size: 14px; color: #E6F1FB; }
+    .objective strong { color: #FAC775; }
+    .vocab-box { background: #E6F1FB; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+    .vocab-title { font-size: 13px; font-weight: 600; color: #0C447C; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .vocab-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .vocab-item { background: white; border-radius: 8px; padding: 0.75rem 1rem; }
+    .vocab-word { font-size: 14px; font-weight: 600; color: #0C447C; margin-bottom: 3px; }
+    .vocab-def { font-size: 13px; color: #555; line-height: 1.5; }
+    .video-link { display: block; background: #1a1a2e; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; text-decoration: none; text-align: center; }
+    .video-icon { font-size: 32px; margin-bottom: 8px; }
+    .video-title { font-size: 16px; font-weight: 600; color: #EEEDFE; margin-bottom: 6px; }
+    .video-subtitle { font-size: 13px; color: #AFA9EC; }
+    .facts-box { background: #f5f5f5; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+    .facts-title { font-size: 13px; font-weight: 600; color: #0C447C; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .fact { display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start; }
+    .fact-dot { width: 8px; height: 8px; border-radius: 50%; background: #0C447C; flex-shrink: 0; margin-top: 6px; }
+    .fact-text { font-size: 15px; color: #1a1a2e; line-height: 1.6; }
+    .fact-text strong { color: #0C447C; }
+    .summary-box { background: #0C447C; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+    .summary-title { font-size: 13px; font-weight: 600; color: #FAC775; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .summary-text { font-size: 15px; color: #E6F1FB; line-height: 1.7; }
+    .topic-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 2rem; }
+    .topic-tag { font-size: 12px; padding: 5px 12px; border-radius: 999px; }
+  </style>
+
+  <div class="article-header">
+    <div class="tags">
+      <span class="tag" style="background:#E6F1FB;color:#0C447C;">General</span>
+      <span class="tag" style="background:#E6F1FB;color:#0C447C;">Thermodynamics</span>
+    </div>
+    <h1 class="article-title">Exothermic vs endothermic reactions</h1>
+    <div class="objective"><strong>Learning objective:</strong> Distinguish between exothermic and endothermic reactions and give examples of each.</div>
+  </div>
+
+  <div class="vocab-box">
+    <div class="vocab-title">Key vocabulary</div>
+    <div class="vocab-grid">
+      <div class="vocab-item">
+        <div class="vocab-word">Exothermic</div>
+        <div class="vocab-def">A reaction that releases energy as heat into the surroundings. The products have less energy than the reactants.</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-word">Endothermic</div>
+        <div class="vocab-def">A reaction that absorbs energy from the surroundings. The products have more energy than the reactants.</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-word">Enthalpy</div>
+        <div class="vocab-def">The total heat energy stored in a substance. Symbol: H.</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-word">Activation energy</div>
+        <div class="vocab-def">The minimum energy needed to start a chemical reaction.</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-word">Energy profile</div>
+        <div class="vocab-def">A diagram showing how energy changes during a chemical reaction.</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-word">Bond energy</div>
+        <div class="vocab-def">The energy needed to break a chemical bond. Breaking bonds requires energy, forming bonds releases it.</div>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://www.youtube.com/results?search_query=exothermic+endothermic+reactions+high+school+chemistry" target="_blank" class="video-link">
+    <div class="video-icon">▶</div>
+    <div class="video-title">Watch on YouTube</div>
+    <div class="video-subtitle">Search: exothermic and endothermic reactions high school chemistry</div>
+  </a>
+
+  <div class="facts-box">
+    <div class="facts-title">Key facts</div>
+    <div class="fact">
+      <div class="fact-dot"></div>
+      <div class="fact-text"><strong>Exothermic reactions</strong> release heat — the surroundings get warmer. Examples: burning wood, hand warmers, neutralization reactions.</div>
+    </div>
+    <div class="fact">
+      <div class="fact-dot"></div>
+      <div class="fact-text"><strong>Endothermic reactions</strong> absorb heat — the surroundings get colder. Examples: photosynthesis, dissolving ammonium nitrate in water, cold packs.</div>
+    </div>
+    <div class="fact">
+      <div class="fact-dot"></div>
+      <div class="fact-text">In all reactions, <strong>bonds are broken and formed</strong>. Breaking bonds requires energy. Forming bonds releases energy. If more energy is released than absorbed, the reaction is exothermic.</div>
+    </div>
+    <div class="fact">
+      <div class="fact-dot"></div>
+      <div class="fact-text">Exothermic reactions have a <strong>negative enthalpy change (ΔH)</strong>. Endothermic reactions have a positive ΔH. This tells you the direction of heat flow.</div>
+    </div>
+    <div class="fact">
+      <div class="fact-dot"></div>
+      <div class="fact-text">All reactions need <strong>activation energy</strong> to get started — even exothermic ones. A match needs a spark before it burns, even though burning releases a lot of heat.</div>
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <div class="summary-title">Summary</div>
+    <div class="summary-text">
+      Exothermic reactions release heat into the surroundings and have a negative enthalpy change, while endothermic reactions absorb heat and have a positive enthalpy change. All reactions involve breaking and forming bonds — if more energy is released forming bonds than is needed to break them, the reaction is exothermic. All reactions require activation energy to get started.
+    </div>
+  </div>
+
+  <div class="topic-tags">
+    <span class="topic-tag" style="background:#E6F1FB;color:#0C447C;">Thermodynamics</span>
+    <span class="topic-tag" style="background:#FAEEDA;color:#633806;">General</span>
+    <span class="topic-tag" style="background:#EEEDFE;color:#534AB7;">Exothermic</span>
+    <span class="topic-tag" style="background:#E1F5EE;color:#085041;">Endothermic</span>
+  </div>
+</Layout>

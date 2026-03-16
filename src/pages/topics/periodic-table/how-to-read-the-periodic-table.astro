@@ -1,0 +1,117 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="How to read the periodic table" description="Learn how the periodic table is organised and what information each element box contains">
+  <style>
+    .article-header { background: #27500A; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 999px; font-weight: 500; }
+    .article-title { font-size: 28px; font-weight: 600; color: #EAF3DE; line-height: 1.3; margin-bottom: 10px; }
+    .objective { background: #3B6D11; border-radius: 8px; padding: 0.75rem 1rem; font-size: 14px; color: #EAF3DE; }
+    .objective strong { color: #FAC775; }
+    .vocab-box { background: #EAF3DE; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+    .vocab-title { font-size: 13px; font-weight: 600; color: #27500A; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .vocab-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .vocab-item { background: white; border-radius: 8px; padding: 0.75rem 1rem; }
+    .vocab-word { font-size: 14px; font-weight: 600; color: #27500A; margin-bottom: 3px; }
+    .vocab-def { font-size: 13px; color: #555; line-height: 1.5; }
+    .video-link { display: block; background: #1a1a2e; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; text-decoration: none; text-align: center; }
+    .video-icon { font-size: 32px; margin-bottom: 8px; }
+    .video-title { font-size: 16px; font-weight: 600; color: #EEEDFE; margin-bottom: 6px; }
+    .video-subtitle { font-size: 13px; color: #AFA9EC; }
+    .facts-box { background: #f5f5f5; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+    .facts-title { font-size: 13px; font-weight: 600; color: #27500A; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .fact { display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start; }
+    .fact-dot { width: 8px; height: 8px; border-radius: 50%; background: #27500A; flex-shrink: 0; margin-top: 6px; }
+    .fact-text { font-size: 15px; color: #1a1a2e; line-height: 1.6; }
+    .fact-text strong { color: #27500A; }
+    .summary-box { background: #27500A; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+    .summary-title { font-size: 13px; font-weight: 600; color: #FAC775; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .summary-text { font-size: 15px; color: #EAF3DE; line-height: 1.7; }
+    .topic-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 2rem; }
+    .topic-tag { font-size: 12px; padding: 5px 12px; border-radius: 999px; }
+  </style>
+
+  <div class="article-header">
+    <div class="tags">
+      <span class="tag" style="background:#EAF3DE;color:#27500A;">Beginner</span>
+      <span class="tag" style="background:#EAF3DE;color:#27500A;">Periodic Table</span>
+    </div>
+    <h1 class="article-title">How to read the periodic table</h1>
+    <div class="objective"><strong>Learning objective:</strong> Identify key information from the periodic table including atomic number, mass, groups and periods.</div>
+  </div>
+
+  <div class="vocab-box">
+    <div class="vocab-title">Key vocabulary</div>
+    <div class="vocab-grid">
+      <div class="vocab-item">
+        <div class="vocab-word">Periodic table</div>
+        <div class="vocab-def">A table of all known elements arranged by increasing atomic number and grouped by similar properties.</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-word">Period</div>
+        <div class="vocab-def">A horizontal row in the periodic table. Elements in the same period have the same number of electron shells.</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-word">Group</div>
+        <div class="vocab-def">A vertical column in the periodic table. Elements in the same group have similar chemical properties.</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-word">Atomic number</div>
+        <div class="vocab-def">The number of protons in an atom. Elements are arranged in order of atomic number.</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-word">Atomic mass</div>
+        <div class="vocab-def">The average mass of an atom of an element. Shown below the element symbol in most periodic tables.</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-word">Metal</div>
+        <div class="vocab-def">Elements on the left side of the periodic table. Most elements are metals — they conduct electricity and are shiny solids.</div>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://www.youtube.com/results?search_query=how+to+read+the+periodic+table+beginners" target="_blank" class="video-link">
+    <div class="video-icon">▶</div>
+    <div class="video-title">Watch on YouTube</div>
+    <div class="video-subtitle">Search: how to read the periodic table beginners</div>
+  </a>
+
+  <div class="facts-box">
+    <div class="facts-title">Key facts</div>
+    <div class="fact">
+      <div class="fact-dot"></div>
+      <div class="fact-text">The periodic table has <strong>118 elements</strong> arranged in order of atomic number from hydrogen (1) to oganesson (118).</div>
+    </div>
+    <div class="fact">
+      <div class="fact-dot"></div>
+      <div class="fact-text">Each element box shows the <strong>atomic number</strong> (top), <strong>symbol</strong> (middle), and <strong>atomic mass</strong> (bottom). For example carbon has atomic number 6, symbol C, and mass 12.</div>
+    </div>
+    <div class="fact">
+      <div class="fact-dot"></div>
+      <div class="fact-text">Elements in the same <strong>group</strong> (vertical column) have the same number of outer electrons and behave similarly. Group 1 metals all react vigorously with water.</div>
+    </div>
+    <div class="fact">
+      <div class="fact-dot"></div>
+      <div class="fact-text">Elements in the same <strong>period</strong> (horizontal row) have the same number of electron shells. Period 2 elements all have 2 electron shells.</div>
+    </div>
+    <div class="fact">
+      <div class="fact-dot"></div>
+      <div class="fact-text">The <strong>zigzag line</strong> on the right side of the table separates metals on the left from non-metals on the right. Elements along the line are called metalloids.</div>
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <div class="summary-title">Summary</div>
+    <div class="summary-text">
+      The periodic table organises all 118 known elements by atomic number into rows called periods and columns called groups. Elements in the same group have similar properties because they have the same number of outer electrons. Each element box shows the atomic number, symbol and atomic mass.
+    </div>
+  </div>
+
+  <div class="topic-tags">
+    <span class="topic-tag" style="background:#EAF3DE;color:#27500A;">Periodic Table</span>
+    <span class="topic-tag" style="background:#FAEEDA;color:#633806;">Beginner</span>
+    <span class="topic-tag" style="background:#EEEDFE;color:#534AB7;">Groups</span>
+    <span class="topic-tag" style="background:#E6F1FB;color:#0C447C;">Periods</span>
+  </div>
+</Layout>

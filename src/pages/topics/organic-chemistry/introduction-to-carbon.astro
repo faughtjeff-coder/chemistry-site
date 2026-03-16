@@ -1,0 +1,117 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Introduction to carbon" description="Learn why carbon is the basis of all life and how it forms the backbone of organic chemistry">
+  <style>
+    .article-header { background: #72243E; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 999px; font-weight: 500; }
+    .article-title { font-size: 28px; font-weight: 600; color: #FBEAF0; line-height: 1.3; margin-bottom: 10px; }
+    .objective { background: #993556; border-radius: 8px; padding: 0.75rem 1rem; font-size: 14px; color: #FBEAF0; }
+    .objective strong { color: #FAC775; }
+    .vocab-box { background: #FBEAF0; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+    .vocab-title { font-size: 13px; font-weight: 600; color: #72243E; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .vocab-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .vocab-item { background: white; border-radius: 8px; padding: 0.75rem 1rem; }
+    .vocab-word { font-size: 14px; font-weight: 600; color: #72243E; margin-bottom: 3px; }
+    .vocab-def { font-size: 13px; color: #555; line-height: 1.5; }
+    .video-link { display: block; background: #1a1a2e; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; text-decoration: none; text-align: center; }
+    .video-icon { font-size: 32px; margin-bottom: 8px; }
+    .video-title { font-size: 16px; font-weight: 600; color: #EEEDFE; margin-bottom: 6px; }
+    .video-subtitle { font-size: 13px; color: #AFA9EC; }
+    .facts-box { background: #f5f5f5; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+    .facts-title { font-size: 13px; font-weight: 600; color: #72243E; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .fact { display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start; }
+    .fact-dot { width: 8px; height: 8px; border-radius: 50%; background: #72243E; flex-shrink: 0; margin-top: 6px; }
+    .fact-text { font-size: 15px; color: #1a1a2e; line-height: 1.6; }
+    .fact-text strong { color: #72243E; }
+    .summary-box { background: #72243E; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+    .summary-title { font-size: 13px; font-weight: 600; color: #FAC775; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .summary-text { font-size: 15px; color: #FBEAF0; line-height: 1.7; }
+    .topic-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 2rem; }
+    .topic-tag { font-size: 12px; padding: 5px 12px; border-radius: 999px; }
+  </style>
+
+  <div class="article-header">
+    <div class="tags">
+      <span class="tag" style="background:#FBEAF0;color:#72243E;">General</span>
+      <span class="tag" style="background:#FBEAF0;color:#72243E;">Organic Chemistry</span>
+    </div>
+    <h1 class="article-title">Introduction to carbon</h1>
+    <div class="objective"><strong>Learning objective:</strong> Explain why carbon is unique and describe how it forms the basis of organic chemistry.</div>
+  </div>
+
+  <div class="vocab-box">
+    <div class="vocab-title">Key vocabulary</div>
+    <div class="vocab-grid">
+      <div class="vocab-item">
+        <div class="vocab-word">Organic chemistry</div>
+        <div class="vocab-def">The study of carbon-containing compounds. Most organic compounds also contain hydrogen.</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-word">Carbon</div>
+        <div class="vocab-def">Element with atomic number 6. Can form 4 bonds — more than almost any other element.</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-word">Hydrocarbon</div>
+        <div class="vocab-def">A compound made of only carbon and hydrogen atoms. Methane and petrol are hydrocarbons.</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-word">Functional group</div>
+        <div class="vocab-def">A specific group of atoms in a molecule that gives it particular chemical properties.</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-word">Polymer</div>
+        <div class="vocab-def">A very large molecule made of many repeating smaller units called monomers.</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-word">Isomer</div>
+        <div class="vocab-def">Two molecules with the same chemical formula but different structures.</div>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://www.youtube.com/results?search_query=introduction+to+organic+chemistry+carbon+high+school" target="_blank" class="video-link">
+    <div class="video-icon">▶</div>
+    <div class="video-title">Watch on YouTube</div>
+    <div class="video-subtitle">Search: introduction to organic chemistry carbon high school</div>
+  </a>
+
+  <div class="facts-box">
+    <div class="facts-title">Key facts</div>
+    <div class="fact">
+      <div class="fact-dot"></div>
+      <div class="fact-text">Carbon is unique because it can form <strong>4 covalent bonds</strong> — more than almost any other element. This allows it to build long chains, rings, and complex 3D structures.</div>
+    </div>
+    <div class="fact">
+      <div class="fact-dot"></div>
+      <div class="fact-text">Carbon can bond with itself to form <strong>long chains and rings</strong>. This is why there are millions of different organic compounds — far more than compounds of any other element.</div>
+    </div>
+    <div class="fact">
+      <div class="fact-dot"></div>
+      <div class="fact-text">All living things are built from organic molecules. <strong>DNA, proteins, fats and carbohydrates</strong> are all carbon-based compounds.</div>
+    </div>
+    <div class="fact">
+      <div class="fact-dot"></div>
+      <div class="fact-text"><strong>Hydrocarbons</strong> are the simplest organic compounds — made of only carbon and hydrogen. Methane (CH₄) is the simplest hydrocarbon and the main component of natural gas.</div>
+    </div>
+    <div class="fact">
+      <div class="fact-dot"></div>
+      <div class="fact-text"><strong>Functional groups</strong> determine how an organic molecule behaves. Adding an OH group makes an alcohol, adding COOH makes a carboxylic acid.</div>
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <div class="summary-title">Summary</div>
+    <div class="summary-text">
+      Carbon is the foundation of organic chemistry because it can form 4 bonds and link with other carbon atoms to create millions of different molecules. All living things are built from carbon-based compounds including DNA, proteins and fats. The properties of organic molecules are determined by their functional groups.
+    </div>
+  </div>
+
+  <div class="topic-tags">
+    <span class="topic-tag" style="background:#FBEAF0;color:#72243E;">Organic Chemistry</span>
+    <span class="topic-tag" style="background:#FAEEDA;color:#633806;">General</span>
+    <span class="topic-tag" style="background:#EEEDFE;color:#534AB7;">Carbon</span>
+    <span class="topic-tag" style="background:#E1F5EE;color:#085041;">Hydrocarbons</span>
+  </div>
+</Layout>
