@@ -1,0 +1,122 @@
+Here's article 3 — Reactions.
+Save this as types-of-chemical-reactions.astro inside src\pages\topics\reactions\:
+astro---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Types of chemical reactions" description="Learn the main types of chemical reactions — synthesis, decomposition, combustion and more">
+  <style>
+    .article-header { background: #633806; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 999px; font-weight: 500; }
+    .article-title { font-size: 28px; font-weight: 600; color: #FAEEDA; line-height: 1.3; margin-bottom: 10px; }
+    .objective { background: #854F0B; border-radius: 8px; padding: 0.75rem 1rem; font-size: 14px; color: #FAEEDA; }
+    .objective strong { color: #FAC775; }
+    .vocab-box { background: #FAEEDA; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+    .vocab-title { font-size: 13px; font-weight: 600; color: #633806; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .vocab-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .vocab-item { background: white; border-radius: 8px; padding: 0.75rem 1rem; }
+    .vocab-word { font-size: 14px; font-weight: 600; color: #633806; margin-bottom: 3px; }
+    .vocab-def { font-size: 13px; color: #555; line-height: 1.5; }
+    .video-wrapper { background: #1a1a2e; border-radius: 12px; aspect-ratio: 16/9; margin-bottom: 0.75rem; overflow: hidden; }
+    .video-wrapper iframe { width: 100%; height: 100%; border: none; }
+    .video-caption { font-size: 13px; color: #888; margin-bottom: 2rem; }
+    .facts-box { background: #f5f5f5; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+    .facts-title { font-size: 13px; font-weight: 600; color: #633806; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .fact { display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start; }
+    .fact-dot { width: 8px; height: 8px; border-radius: 50%; background: #633806; flex-shrink: 0; margin-top: 6px; }
+    .fact-text { font-size: 15px; color: #1a1a2e; line-height: 1.6; }
+    .fact-text strong { color: #633806; }
+    .summary-box { background: #633806; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+    .summary-title { font-size: 13px; font-weight: 600; color: #FAC775; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .summary-text { font-size: 15px; color: #FAEEDA; line-height: 1.7; }
+    .topic-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 2rem; }
+    .topic-tag { font-size: 12px; padding: 5px 12px; border-radius: 999px; }
+  </style>
+
+  <div class="article-header">
+    <div class="tags">
+      <span class="tag" style="background:#FAEEDA;color:#412402;">General</span>
+      <span class="tag" style="background:#FAEEDA;color:#633806;">Reactions</span>
+    </div>
+    <h1 class="article-title">Types of chemical reactions</h1>
+    <div class="objective"><strong>Learning objective:</strong> Identify and describe the four main types of chemical reactions with examples.</div>
+  </div>
+
+  <div class="vocab-box">
+    <div class="vocab-title">Key vocabulary</div>
+    <div class="vocab-grid">
+      <div class="vocab-item">
+        <div class="vocab-word">Synthesis</div>
+        <div class="vocab-def">Two or more substances combine to form one new substance. A + B → AB</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-word">Decomposition</div>
+        <div class="vocab-def">One substance breaks down into two or more simpler substances. AB → A + B</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-word">Combustion</div>
+        <div class="vocab-def">A substance reacts rapidly with oxygen, releasing heat and light. Burning is combustion.</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-word">Displacement</div>
+        <div class="vocab-def">A more reactive element replaces a less reactive element in a compound.</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-word">Reactants</div>
+        <div class="vocab-def">The substances that go into a chemical reaction. Written on the left side of an equation.</div>
+      </div>
+      <div class="vocab-item">
+        <div class="vocab-word">Products</div>
+        <div class="vocab-def">The new substances formed in a chemical reaction. Written on the right side of an equation.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-wrapper">
+    <iframe
+      src="https://www.youtube.com/embed/yKqGHMCXjgI"
+      title="Types of Chemical Reactions — Tyler DeWitt"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <p class="video-caption">Tyler DeWitt breaks down the main types of chemical reactions with clear examples.</p>
+
+  <div class="facts-box">
+    <div class="facts-title">Key facts</div>
+    <div class="fact">
+      <div class="fact-dot"></div>
+      <div class="fact-text"><strong>Synthesis reactions</strong> combine two or more reactants into one product. Example: hydrogen and oxygen combine to form water. 2H₂ + O₂ → 2H₂O</div>
+    </div>
+    <div class="fact">
+      <div class="fact-dot"></div>
+      <div class="fact-text"><strong>Decomposition reactions</strong> break one compound into simpler substances. Example: heating calcium carbonate produces calcium oxide and carbon dioxide.</div>
+    </div>
+    <div class="fact">
+      <div class="fact-dot"></div>
+      <div class="fact-text"><strong>Combustion reactions</strong> always involve a fuel reacting with oxygen to produce carbon dioxide and water. Example: burning methane gas in a stove.</div>
+    </div>
+    <div class="fact">
+      <div class="fact-dot"></div>
+      <div class="fact-text"><strong>Displacement reactions</strong> happen when a more reactive metal pushes a less reactive metal out of a compound. Example: iron displaces copper from copper sulfate solution.</div>
+    </div>
+    <div class="fact">
+      <div class="fact-dot"></div>
+      <div class="fact-text">In every chemical reaction, <strong>atoms are conserved</strong> — no atoms are created or destroyed. The same atoms are just rearranged into new substances.</div>
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <div class="summary-title">Summary</div>
+    <div class="summary-text">
+      The four main types of chemical reactions are synthesis, decomposition, combustion and displacement. In synthesis two substances combine, in decomposition one breaks apart, in combustion a fuel burns with oxygen, and in displacement a more reactive element replaces a less reactive one. In all reactions atoms are conserved — they are rearranged but never created or destroyed.
+    </div>
+  </div>
+
+  <div class="topic-tags">
+    <span class="topic-tag" style="background:#FAEEDA;color:#633806;">Reactions</span>
+    <span class="topic-tag" style="background:#FAEEDA;color:#412402;">General</span>
+    <span class="topic-tag" style="background:#EEEDFE;color:#534AB7;">Synthesis</span>
+    <span class="topic-tag" style="background:#E1F5EE;color:#085041;">Combustion</span>
+  </div>
+</Layout>
