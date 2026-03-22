@@ -1,0 +1,103 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Bioluminescence in Fireflies" description="Discover how fireflies create their magical glow through a fascinating biochemical reaction involving luciferin and luciferase">
+  <style>
+    .article-header { background: #3C3489; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 999px; font-weight: 500; }
+    .article-title { font-size: 28px; font-weight: 600; color: #EEEDFE; line-height: 1.3; margin-bottom: 10px; }
+    .article-desc { font-size: 15px; color: #AFA9EC; line-height: 1.6; margin-bottom: 12px; }
+    .meta { font-size: 13px; color: #7F77DD; }
+    .equation-box { background: #26215C; border-radius: 12px; padding: 1.25rem; display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 2rem; flex-wrap: wrap; }
+    .eq-part { font-size: 18px; font-weight: 500; }
+    .eq-arrow { font-size: 14px; color: #7F77DD; }
+    .body-text { font-size: 16px; line-height: 1.8; color: #1a1a2e; margin-bottom: 1.5rem; }
+    .callout { background: #f5f5f5; border-left: 3px solid #FAC775; border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+    .callout-title { font-size: 14px; font-weight: 600; color: #1a1a2e; margin-bottom: 4px; }
+    .callout-text { font-size: 14px; color: #555; line-height: 1.6; }
+    .section-label { font-size: 11px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .video-link { display: block; background: #1a1a2e; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; text-decoration: none; text-align: center; }
+    .video-icon { font-size: 32px; margin-bottom: 8px; }
+    .video-title { font-size: 16px; font-weight: 600; color: #EEEDFE; margin-bottom: 6px; }
+    .video-subtitle { font-size: 13px; color: #AFA9EC; }
+    .research-links { display: flex; flex-direction: column; gap: 8px; margin-bottom: 2rem; }
+    .research-link { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border: 0.5px solid #e0e0e0; border-radius: 8px; text-decoration: none; color: inherit; }
+    .research-link:hover { border-color: #AFA9EC; background: #f9f9ff; }
+    .research-icon { width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; }
+    .research-title { font-size: 13px; font-weight: 500; color: #1a1a2e; }
+    .research-source { font-size: 11px; color: #888; margin-top: 2px; }
+    .research-arrow { margin-left: auto; color: #AFA9EC; font-size: 14px; }
+    .topic-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .topic-tag { font-size: 12px; padding: 5px 12px; border-radius: 999px; }
+  </style>
+
+  <div class="article-header">
+    <div class="tags">
+      <span class="tag" style="background:#FAC775;color:#412402;">Reaction of the week</span>
+      <span class="tag" style="background:#E1F5EE;color:#085041;">Biochemical</span>
+    </div>
+    <h1 class="article-title">The Magic of Firefly Light: Nature's Perfect Chemistry</h1>
+    <p class="article-desc">Ever wondered how fireflies create their enchanting glow? Dive into the fascinating world of bioluminescence and discover the elegant chemistry behind one of nature's most magical phenomena.</p>
+    <div class="meta">8 min read · Includes video · 3 research links</div>
+  </div>
+
+  <div class="section-label">The reaction</div>
+  <div class="equation-box">
+    <span class="eq-part" style="color:#AFA9EC;">Luciferin + ATP + O₂</span>
+    <span class="eq-arrow">→</span>
+    <span class="eq-part" style="color:#9FE1CB;">Oxyluciferin + Light + AMP</span>
+  </div>
+
+  <p class="body-text">On warm summer evenings, fireflies transform meadows into magical light shows with their synchronized flashing. But behind this natural wonder lies one of the most efficient chemical reactions known to science. Unlike the light from your phone or a light bulb, which generates significant heat as a byproduct, fireflies produce what scientists call "cold light" - a nearly 100% efficient conversion of chemical energy to light energy.</p>
+
+  <p class="body-text">The star of this biochemical show is a molecule called luciferin, named after Lucifer, the "light-bearer." In the presence of the enzyme luciferase, ATP (the cell's energy currency), and oxygen, luciferin undergoes a remarkable transformation. The reaction creates an excited state molecule called oxyluciferin, which immediately releases its excess energy as a photon of light - that characteristic yellow-green glow we associate with fireflies.</p>
+
+  <div class="callout">
+    <div class="callout-title">ATP: The Universal Energy Currency</div>
+    <div class="callout-text">ATP (adenosine triphosphate) is like the universal "battery" of living cells. In this reaction, ATP provides the energy needed to "activate" luciferin, making it ready to react with oxygen. When ATP breaks down to AMP (adenosine monophosphate), it releases energy that powers the light-producing reaction.</div>
+  </div>
+
+  <p class="body-text">What makes this reaction truly spectacular is its efficiency. Traditional incandescent bulbs convert only about 5% of electrical energy into light, with the rest becoming heat. Fireflies, however, achieve nearly 96% efficiency - virtually no energy is wasted as heat. This incredible efficiency is why fireflies can produce light without burning themselves, and it's inspired scientists to develop more efficient LED technologies and even explore bioluminescent lighting for sustainable applications.</p>
+
+  <a href="https://www.youtube.com/results?search_query=firefly+bioluminescence+chemistry+luciferin+luciferase" target="_blank" class="video-link">
+    <div class="video-icon">▶</div>
+    <div class="video-title">Watch on YouTube</div>
+    <div class="video-subtitle">Search for firefly bioluminescence chemistry demonstrations and explanations</div>
+  </a>
+
+  <div class="section-label">Go deeper</div>
+  <div class="research-links">
+    <a href="https://chem.libretexts.org/Bookshelves/Biological_Chemistry/Supplemental_Modules_(Biological_Chemistry)/Photobiology/Bioluminescence" target="_blank" class="research-link">
+      <div class="research-icon" style="background:#E6F1FB;">📄</div>
+      <div>
+        <div class="research-title">Bioluminescence: Chemical Mechanisms</div>
+        <div class="research-source">Chemistry LibreTexts</div>
+      </div>
+      <span class="research-arrow">→</span>
+    </a>
+    <a href="https://www.khanacademy.org/science/biology/energy-and-enzymes/introduction-to-enzymes/a/enzymes-and-the-active-site" target="_blank" class="research-link">
+      <div class="research-icon" style="background:#E1F5EE;">📄</div>
+      <div>
+        <div class="research-title">How Enzymes Work: The Role of Luciferase</div>
+        <div class="research-source">Khan Academy</div>
+      </div>
+      <span class="research-arrow">→</span>
+    </a>
+    <a href="https://pubs.acs.org/doi/10.1021/acs.biochem.7b00681" target="_blank" class="research-link">
+      <div class="research-icon" style="background:#EEEDFE;">📄</div>
+      <div>
+        <div class="research-title">Firefly Luciferase: Structure and Function</div>
+        <div class="research-source">ACS Publications</div>
+      </div>
+      <span class="research-arrow">→</span>
+    </a>
+  </div>
+
+  <div class="section-label">Topics</div>
+  <div class="topic-tags">
+    <span class="topic-tag" style="background:#EEEDFE;color:#534AB7;">Enzyme catalysis</span>
+    <span class="topic-tag" style="background:#E1F5EE;color:#085041;">Energy efficiency</span>
+    <span class="topic-tag" style="background:#FAEEDA;color:#633806;">Photochemistry</span>
+  </div>
+</Layout>
