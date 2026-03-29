@@ -1,7 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 ---
-<Layout title="Bioluminescence in Fireflies" description="Discover how fireflies create their magical glow through a fascinating biochemical reaction involving luciferin and luciferase">
+<Layout title="Bioluminescence in Fireflies" description="Discover the fascinating biochemistry behind firefly light production through luciferin oxidation">
   <style>
     .article-header { background: #3C3489; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
     .tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
@@ -35,10 +35,10 @@ import Layout from '../../../layouts/Layout.astro';
   <div class="article-header">
     <div class="tags">
       <span class="tag" style="background:#FAC775;color:#412402;">Reaction of the week</span>
-      <span class="tag" style="background:#E1F5EE;color:#085041;">Biochemical</span>
+      <span class="tag" style="background:#E1F5EE;color:#085041;">Biochemical oxidation</span>
     </div>
-    <h1 class="article-title">The Magic of Firefly Light: Nature's Perfect Chemistry</h1>
-    <p class="article-desc">Ever wondered how fireflies create their enchanting glow? Dive into the fascinating world of bioluminescence and discover the elegant chemistry behind one of nature's most magical phenomena.</p>
+    <h1 class="article-title">The Magic Chemistry Behind Firefly Light</h1>
+    <p class="article-desc">Ever wondered how fireflies create their enchanting glow? Dive into the fascinating world of bioluminescence and discover the ATP-powered chemical reaction that turns summer nights into light shows.</p>
     <div class="meta">8 min read · Includes video · 3 research links</div>
   </div>
 
@@ -46,24 +46,24 @@ import Layout from '../../../layouts/Layout.astro';
   <div class="equation-box">
     <span class="eq-part" style="color:#AFA9EC;">Luciferin + ATP + O₂</span>
     <span class="eq-arrow">→</span>
-    <span class="eq-part" style="color:#9FE1CB;">Oxyluciferin + Light + AMP</span>
+    <span class="eq-part" style="color:#9FE1CB;">Oxyluciferin + Light + AMP + PPi</span>
   </div>
 
-  <p class="body-text">On warm summer evenings, fireflies transform meadows into magical light shows with their synchronized flashing. But behind this natural wonder lies one of the most efficient chemical reactions known to science. Unlike the light from your phone or a light bulb, which generates significant heat as a byproduct, fireflies produce what scientists call "cold light" - a nearly 100% efficient conversion of chemical energy to light energy.</p>
+  <p class="body-text">Picture a warm summer evening filled with tiny dancing lights. Fireflies create this magical display through one of nature's most efficient chemical reactions - bioluminescence. Unlike a light bulb that wastes energy as heat, fireflies convert nearly 96% of their chemical energy directly into light, making them living examples of "cold light" production.</p>
 
-  <p class="body-text">The star of this biochemical show is a molecule called luciferin, named after Lucifer, the "light-bearer." In the presence of the enzyme luciferase, ATP (the cell's energy currency), and oxygen, luciferin undergoes a remarkable transformation. The reaction creates an excited state molecule called oxyluciferin, which immediately releases its excess energy as a photon of light - that characteristic yellow-green glow we associate with fireflies.</p>
+  <p class="body-text">The firefly's light-producing reaction takes place in specialized cells called photocytes, located in their abdomen. The key player is a molecule called luciferin (named after Lucifer, the "light bearer"), which undergoes oxidation in the presence of the enzyme luciferase. This reaction requires ATP (adenosine triphosphate) - the same energy currency your cells use - and oxygen from the air the firefly breathes.</p>
 
   <div class="callout">
-    <div class="callout-title">ATP: The Universal Energy Currency</div>
-    <div class="callout-text">ATP (adenosine triphosphate) is like the universal "battery" of living cells. In this reaction, ATP provides the energy needed to "activate" luciferin, making it ready to react with oxygen. When ATP breaks down to AMP (adenosine monophosphate), it releases energy that powers the light-producing reaction.</div>
+    <div class="callout-title">Why ATP Matters</div>
+    <div class="callout-text">ATP isn't just fuel - it's the activation key. The enzyme luciferase first combines luciferin with ATP to form luciferyl-adenylate, creating a high-energy intermediate. Only then can oxygen attack this activated molecule, leading to the formation of excited oxyluciferin that releases light as it returns to its ground state.</div>
   </div>
 
-  <p class="body-text">What makes this reaction truly spectacular is its efficiency. Traditional incandescent bulbs convert only about 5% of electrical energy into light, with the rest becoming heat. Fireflies, however, achieve nearly 96% efficiency - virtually no energy is wasted as heat. This incredible efficiency is why fireflies can produce light without burning themselves, and it's inspired scientists to develop more efficient LED technologies and even explore bioluminescent lighting for sustainable applications.</p>
+  <p class="body-text">The color of the light depends on the specific structure of the luciferase enzyme and the pH of the firefly's photocytes. Most North American fireflies produce yellow-green light (around 560 nanometers), but some species can create orange, red, or even blue light. The firefly controls when to flash by regulating the supply of oxygen to the photocytes through its tracheal system - no oxygen means no reaction, and thus no light. This gives fireflies precise control over their romantic light displays, with each species having its own unique flashing pattern to attract the right mate.</p>
 
   <a href="https://www.youtube.com/results?search_query=firefly+bioluminescence+chemistry+luciferin+luciferase" target="_blank" class="video-link">
     <div class="video-icon">▶</div>
     <div class="video-title">Watch on YouTube</div>
-    <div class="video-subtitle">Search for firefly bioluminescence chemistry demonstrations and explanations</div>
+    <div class="video-subtitle">Search for firefly bioluminescence and luciferin chemistry videos</div>
   </a>
 
   <div class="section-label">Go deeper</div>
@@ -71,24 +71,24 @@ import Layout from '../../../layouts/Layout.astro';
     <a href="https://chem.libretexts.org/Bookshelves/Biological_Chemistry/Supplemental_Modules_(Biological_Chemistry)/Photobiology/Bioluminescence" target="_blank" class="research-link">
       <div class="research-icon" style="background:#E6F1FB;">📄</div>
       <div>
-        <div class="research-title">Bioluminescence: Chemical Mechanisms</div>
+        <div class="research-title">Bioluminescence: The Chemistry of Living Light</div>
         <div class="research-source">Chemistry LibreTexts</div>
       </div>
       <span class="research-arrow">→</span>
     </a>
-    <a href="https://www.khanacademy.org/science/biology/energy-and-enzymes/introduction-to-enzymes/a/enzymes-and-the-active-site" target="_blank" class="research-link">
+    <a href="https://www.khanacademy.org/science/biology/cellular-energetics/cellular-energy-intro/a/energy-intro" target="_blank" class="research-link">
       <div class="research-icon" style="background:#E1F5EE;">📄</div>
       <div>
-        <div class="research-title">How Enzymes Work: The Role of Luciferase</div>
+        <div class="research-title">Introduction to Cellular Energy and ATP</div>
         <div class="research-source">Khan Academy</div>
       </div>
       <span class="research-arrow">→</span>
     </a>
-    <a href="https://pubs.acs.org/doi/10.1021/acs.biochem.7b00681" target="_blank" class="research-link">
+    <a href="https://pubs.acs.org/doi/10.1021/ed083p653" target="_blank" class="research-link">
       <div class="research-icon" style="background:#EEEDFE;">📄</div>
       <div>
-        <div class="research-title">Firefly Luciferase: Structure and Function</div>
-        <div class="research-source">ACS Publications</div>
+        <div class="research-title">The Luciferase Reaction: Mechanism and Applications</div>
+        <div class="research-source">Journal of Chemical Education</div>
       </div>
       <span class="research-arrow">→</span>
     </a>
@@ -96,8 +96,8 @@ import Layout from '../../../layouts/Layout.astro';
 
   <div class="section-label">Topics</div>
   <div class="topic-tags">
-    <span class="topic-tag" style="background:#EEEDFE;color:#534AB7;">Enzyme catalysis</span>
-    <span class="topic-tag" style="background:#E1F5EE;color:#085041;">Energy efficiency</span>
-    <span class="topic-tag" style="background:#FAEEDA;color:#633806;">Photochemistry</span>
+    <span class="topic-tag" style="background:#EEEDFE;color:#534AB7;">Biochemistry</span>
+    <span class="topic-tag" style="background:#E1F5EE;color:#085041;">Oxidation reactions</span>
+    <span class="topic-tag" style="background:#FAEEDA;color:#633806;">Energy transfer</span>
   </div>
 </Layout>

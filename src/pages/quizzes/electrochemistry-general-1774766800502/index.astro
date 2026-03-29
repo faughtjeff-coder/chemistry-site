@@ -1,0 +1,190 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Electrochemistry Fundamentals Quiz" description="Test your understanding of electrochemistry basics including redox reactions, galvanic cells, and electrolysis">
+  <style>
+    .quiz-header { background: #26215C; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .quiz-title { font-size: 26px; font-weight: 600; color: #EEEDFE; margin-bottom: 8px; }
+    .quiz-meta { font-size: 14px; color: #AFA9EC; }
+    .question-box { background: white; border-radius: 12px; border: 0.5px solid #e0e0e0; padding: 2rem; margin-bottom: 1.5rem; display: none; }
+    .question-box.active { display: block; }
+    .question-number { font-size: 12px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+    .question-text { font-size: 18px; font-weight: 500; color: #1a1a2e; margin-bottom: 1.5rem; line-height: 1.5; }
+    .options { display: flex; flex-direction: column; gap: 10px; }
+    .option { background: #f5f5f5; border: 2px solid transparent; border-radius: 8px; padding: 12px 16px; font-size: 15px; color: #1a1a2e; cursor: pointer; text-align: left; font-family: inherit; }
+    .option:hover:not(:disabled) { border-color: #AFA9EC; }
+    .option.correct { background: #E1F5EE; border-color: #085041; color: #085041; }
+    .option.wrong { background: #FAECE7; border-color: #712B13; color: #712B13; }
+    .option.reveal { background: #E1F5EE; border-color: #085041; color: #085041; }
+    .feedback { margin-top: 1rem; padding: 0.75rem 1rem; border-radius: 8px; font-size: 14px; display: none; line-height: 1.5; }
+    .feedback.show { display: block; }
+    .feedback.correct { background: #E1F5EE; color: #085041; }
+    .feedback.wrong { background: #FAECE7; color: #712B13; }
+    .next-btn { margin-top: 1rem; background: #534AB7; color: white; border: none; padding: 10px 24px; border-radius: 8px; font-size: 15px; cursor: pointer; font-family: inherit; display: none; }
+    .next-btn.show { display: block; }
+    .progress { background: #f5f5f5; border-radius: 999px; height: 8px; margin-bottom: 2rem; overflow: hidden; }
+    .progress-bar { background: #534AB7; height: 100%; border-radius: 999px; transition: width 0.3s; }
+    .score-box { background: #26215C; border-radius: 12px; padding: 2rem; text-align: center; display: none; }
+    .score-box.show { display: block; }
+    .score-title { font-size: 22px; font-weight: 600; color: #EEEDFE; margin-bottom: 8px; }
+    .score-value { font-size: 48px; font-weight: 600; color: #FAC775; margin-bottom: 8px; }
+    .score-message { font-size: 15px; color: #AFA9EC; margin-bottom: 1.5rem; }
+    .retry-btn { background: #534AB7; color: white; border: none; padding: 10px 24px; border-radius: 8px; font-size: 15px; cursor: pointer; font-family: inherit; }
+  </style>
+
+  <div class="quiz-header">
+    <h1 class="quiz-title">Electrochemistry Fundamentals Quiz</h1>
+    <div class="quiz-meta">5 questions · Multiple choice · Instant feedback</div>
+  </div>
+
+  <div class="progress"><div class="progress-bar" id="progress-bar" style="width:0%"></div></div>
+  <div id="quiz-container"></div>
+  <div class="score-box" id="score-box">
+    <div class="score-title">Quiz complete!</div>
+    <div class="score-value" id="score-value"></div>
+    <div class="score-message" id="score-message"></div>
+    <button class="retry-btn" id="retry-btn">Try again</button>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        text: "In a redox reaction, what happens to the substance that is reduced?",
+        options: [
+          "It gains electrons and its oxidation state decreases",
+          "It loses electrons and its oxidation state increases",
+          "It gains electrons and its oxidation state increases",
+          "It loses electrons and its oxidation state decreases"
+        ],
+        correct: 0,
+        feedback: {
+          correct: "Correct! Reduction involves gaining electrons, which causes the oxidation state to become more negative (decrease).",
+          wrong: "Incorrect. Remember RED-OX: REDuction = gain electrons, OXidation = lose electrons. When electrons are gained, the oxidation state decreases."
+        }
+      },
+      {
+        text: "In a galvanic cell, which electrode is the cathode?",
+        options: [
+          "The electrode where oxidation occurs",
+          "The electrode where reduction occurs",
+          "The electrode with the lowest reduction potential",
+          "The electrode that releases electrons"
+        ],
+        correct: 1,
+        feedback: {
+          correct: "Excellent! The cathode is where reduction occurs in any electrochemical cell, including galvanic cells.",
+          wrong: "Incorrect. The cathode is always where reduction occurs. In a galvanic cell, this is the positive electrode that attracts electrons."
+        }
+      },
+      {
+        text: "What is the standard cell potential (E°cell) for a galvanic cell with E°cathode = +0.80 V and E°anode = -0.76 V?",
+        options: [
+          "+0.04 V",
+          "+1.56 V",
+          "-0.04 V",
+          "-1.56 V"
+        ],
+        correct: 1,
+        feedback: {
+          correct: "Perfect! E°cell = E°cathode - E°anode = 0.80 V - (-0.76 V) = +1.56 V. A positive value indicates a spontaneous reaction.",
+          wrong: "Incorrect. Use the formula E°cell = E°cathode - E°anode = 0.80 - (-0.76) = +1.56 V."
+        }
+      },
+      {
+        text: "During electrolysis of molten sodium chloride (NaCl), what products are formed?",
+        options: [
+          "Hydrogen gas and chlorine gas",
+          "Sodium hydroxide and hydrogen gas",
+          "Metallic sodium and chlorine gas",
+          "Sodium hydroxide and chlorine gas"
+        ],
+        correct: 2,
+        feedback: {
+          correct: "Correct! In molten NaCl electrolysis, Na⁺ ions are reduced to sodium metal at the cathode, and Cl⁻ ions are oxidized to chlorine gas at the anode.",
+          wrong: "Incorrect. In molten NaCl (no water present), Na⁺ reduces to metallic sodium and Cl⁻ oxidizes to chlorine gas."
+        }
+      },
+      {
+        text: "Which statement best describes what happens in the salt bridge of a galvanic cell?",
+        options: [
+          "Electrons flow through it to complete the circuit",
+          "It prevents any ion movement between the half-cells",
+          "Ions migrate through it to maintain electrical neutrality",
+          "Chemical reactions occur to generate more electrons"
+        ],
+        correct: 2,
+        feedback: {
+          correct: "Excellent! The salt bridge allows ions to migrate between half-cells to maintain electrical neutrality as electrons flow through the external circuit.",
+          wrong: "Incorrect. The salt bridge maintains electrical neutrality by allowing ion migration. Electrons flow through the external wire, not the salt bridge."
+        }
+      }
+    ];
+
+    let score = 0;
+    let current = 0;
+    let answered = false;
+
+    function buildQuestion(index) {
+      const q = questions[index];
+      const div = document.createElement('div');
+      div.className = 'question-box active';
+      div.id = 'question-box';
+      div.innerHTML = `
+        <div class="question-number">Question ${index + 1} of ${questions.length}</div>
+        <div class="question-text">${q.text}</div>
+        <div class="options" id="options-box">
+          ${q.options.map((opt, i) => `<button class="option" data-index="${i}">${opt}</button>`).join('')}
+        </div>
+        <div class="feedback" id="feedback-box"></div>
+        <button class="next-btn" id="next-btn">${index === questions.length - 1 ? 'See my score →' : 'Next question →'}</button>
+      `;
+      return div;
+    }
+
+    function showQuestion(index) {
+      answered = false;
+      const container = document.getElementById('quiz-container');
+      container.innerHTML = '';
+      const qDiv = buildQuestion(index);
+      container.appendChild(qDiv);
+      document.getElementById('options-box').querySelectorAll('.option').forEach(btn => {
+        btn.addEventListener('click', function() {
+          if (answered) return;
+          answered = true;
+          const chosen = parseInt(this.dataset.index);
+          const correct = questions[index].correct;
+          const allOptions = document.getElementById('options-box').querySelectorAll('.option');
+          allOptions.forEach(b => b.disabled = true);
+          const fb = document.getElementById('feedback-box');
+          if (chosen === correct) {
+            this.classList.add('correct');
+            fb.textContent = questions[index].feedback.correct;
+            fb.className = 'feedback show correct';
+            score++;
+          } else {
+            this.classList.add('wrong');
+            allOptions[correct].classList.add('reveal');
+            fb.textContent = questions[index].feedback.wrong;
+            fb.className = 'feedback show wrong';
+          }
+          document.getElementById('next-btn').classList.add('show');
+          document.getElementById('progress-bar').style.width = ((index + 1) / questions.length * 100) + '%';
+        });
+      });
+      document.getElementById('next-btn').addEventListener('click', function() {
+        if (index === questions.length - 1) { showScore(); } else { current++; showQuestion(current); }
+      });
+    }
+
+    function showScore() {
+      document.getElementById('quiz-container').innerHTML = '';
+      const scoreBox = document.getElementById('score-box');
+      scoreBox.classList.add('show');
+      document.getElementById('score-value').textContent = score + '/' + questions.length;
+      const pct = score / questions.length;
+      let msg = pct === 1 ? 'Perfect score!' : pct >= 0.8 ? 'Excellent work!' : pct >= 0.6 ? 'Good work! Review a few topics.' : 'Keep practicing! Read the article and try again.';
+      document.getElementById('score-message').textContent = msg;
+    }
+
+    document.getElementById('retry-btn').addEventListener('click', function() {
+      score = 0; current = 0;
