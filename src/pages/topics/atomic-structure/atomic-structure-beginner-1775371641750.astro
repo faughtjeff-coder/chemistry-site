@@ -1,0 +1,81 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Inside the Atom: Understanding Atomic Structure" description="Learn about the basic structure of atoms, including protons, neutrons, and electrons, and how they make up everything around us.">
+  <style>
+    .article-header { background: #26215C; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 999px; font-weight: 500; }
+    .article-title { font-size: 28px; font-weight: 600; color: #EEEDFE; line-height: 1.3; margin-bottom: 10px; }
+    .objective { background: #534AB7; border-radius: 8px; padding: 0.75rem 1rem; font-size: 14px; color: #EEEDFE; }
+    .objective strong { color: #FAC775; }
+    .vocab-box { background: #EEEDFE; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+    .vocab-title { font-size: 13px; font-weight: 600; color: #534AB7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .vocab-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .vocab-item { background: white; border-radius: 8px; padding: 0.75rem 1rem; }
+    .vocab-word { font-size: 14px; font-weight: 600; color: #26215C; margin-bottom: 3px; }
+    .vocab-def { font-size: 13px; color: #555; line-height: 1.5; }
+    .video-link { display: block; background: #1a1a2e; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; text-decoration: none; text-align: center; }
+    .video-icon { font-size: 32px; margin-bottom: 8px; }
+    .video-title { font-size: 16px; font-weight: 600; color: #EEEDFE; margin-bottom: 6px; }
+    .video-subtitle { font-size: 13px; color: #AFA9EC; }
+    .facts-box { background: #f5f5f5; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+    .facts-title { font-size: 13px; font-weight: 600; color: #26215C; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .fact { display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start; }
+    .fact-dot { width: 8px; height: 8px; border-radius: 50%; background: #534AB7; flex-shrink: 0; margin-top: 6px; }
+    .fact-text { font-size: 15px; color: #1a1a2e; line-height: 1.6; }
+    .fact-text strong { color: #26215C; }
+    .summary-box { background: #534AB7; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+    .summary-title { font-size: 13px; font-weight: 600; color: #FAC775; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .summary-text { font-size: 15px; color: #EEEDFE; line-height: 1.7; }
+    .topic-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 2rem; }
+    .topic-tag { font-size: 12px; padding: 5px 12px; border-radius: 999px; }
+  </style>
+
+  <div class="article-header">
+    <div class="tags">
+      <span class="tag" style="background:#FAEEDA;color:#412402;">Beginner</span>
+      <span class="tag" style="background:#EEEDFE;color:#26215C;">Atomic Structure</span>
+    </div>
+    <h1 class="article-title">Inside the Atom: Understanding Atomic Structure</h1>
+    <div class="objective"><strong>Learning objective:</strong> Understand what atoms are made of and how protons, neutrons, and electrons are arranged inside an atom</div>
+  </div>
+
+  <div class="vocab-box">
+    <div class="vocab-title">Key vocabulary</div>
+    <div class="vocab-grid">
+      <div class="vocab-item"><div class="vocab-word">Atom</div><div class="vocab-def">The smallest unit of matter that still keeps the properties of an element</div></div>
+      <div class="vocab-item"><div class="vocab-word">Proton</div><div class="vocab-def">A positively charged particle found in the nucleus of an atom</div></div>
+      <div class="vocab-item"><div class="vocab-word">Neutron</div><div class="vocab-def">A particle with no electric charge found in the nucleus of an atom</div></div>
+      <div class="vocab-item"><div class="vocab-word">Electron</div><div class="vocab-def">A negatively charged particle that moves around the nucleus of an atom</div></div>
+      <div class="vocab-item"><div class="vocab-word">Nucleus</div><div class="vocab-def">The center of an atom where protons and neutrons are located</div></div>
+      <div class="vocab-item"><div class="vocab-word">Electron Shell</div><div class="vocab-def">The area around the nucleus where electrons move in organized layers</div></div>
+    </div>
+  </div>
+
+  <a href="https://www.youtube.com/results?search_query=atomic+structure+for+beginners+protons+neutrons+electrons" target="_blank" class="video-link">
+    <div class="video-icon">▶</div>
+    <div class="video-title">Watch on YouTube</div>
+    <div class="video-subtitle">Search for videos about atomic structure and subatomic particles</div>
+  </a>
+
+  <div class="facts-box">
+    <div class="facts-title">Key facts</div>
+    <div class="fact"><div class="fact-dot"></div><div class="fact-text">An atom is <strong>mostly empty space</strong> - if an atom were the size of a football stadium, the nucleus would be like a marble at the center</div></div>
+    <div class="fact"><div class="fact-dot"></div><div class="fact-text">The number of <strong>protons</strong> in an atom determines what element it is - hydrogen has 1 proton, oxygen has 8 protons</div></div>
+    <div class="fact"><div class="fact-dot"></div><div class="fact-text">In a neutral atom, the number of <strong>electrons equals the number of protons</strong>, so the positive and negative charges balance out</div></div>
+    <div class="fact"><div class="fact-dot"></div><div class="fact-text">Electrons are found in <strong>energy levels or shells</strong> around the nucleus, with the first shell holding up to 2 electrons and the second shell holding up to 8</div></div>
+    <div class="fact"><div class="fact-dot"></div><div class="fact-text">The nucleus contains <strong>99.9% of the atom's mass</strong> even though it takes up very little space compared to the whole atom</div></div>
+  </div>
+
+  <div class="summary-box">
+    <div class="summary-title">Summary</div>
+    <div class="summary-text">Atoms are the building blocks of all matter and consist of three main particles: protons (positive charge), neutrons (no charge), and electrons (negative charge). The protons and neutrons are packed together in the center called the nucleus, while electrons move around the nucleus in organized layers called shells. Understanding atomic structure helps us explain how elements behave and combine to form different substances in our world.</div>
+  </div>
+
+  <div class="topic-tags">
+    <span class="topic-tag" style="background:#EEEDFE;color:#534AB7;">Subatomic Particles</span>
+    <span class="topic-tag" style="background:#FAEEDA;color:#633806;">Chemical Elements</span>
+    <span class="topic-tag" style="background:#E1F5EE;color:#085041;">Matter and Energy</span>
+  </div>
+</Layout>

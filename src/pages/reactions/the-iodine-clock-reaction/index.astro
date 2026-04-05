@@ -1,0 +1,103 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="The Iodine Clock Reaction" description="Discover the mesmerizing iodine clock reaction that suddenly turns colorless solutions deep blue in a perfectly timed chemical display">
+  <style>
+    .article-header { background: #3C3489; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 999px; font-weight: 500; }
+    .article-title { font-size: 28px; font-weight: 600; color: #EEEDFE; line-height: 1.3; margin-bottom: 10px; }
+    .article-desc { font-size: 15px; color: #AFA9EC; line-height: 1.6; margin-bottom: 12px; }
+    .meta { font-size: 13px; color: #7F77DD; }
+    .equation-box { background: #26215C; border-radius: 12px; padding: 1.25rem; display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 2rem; flex-wrap: wrap; }
+    .eq-part { font-size: 18px; font-weight: 500; }
+    .eq-arrow { font-size: 14px; color: #7F77DD; }
+    .body-text { font-size: 16px; line-height: 1.8; color: #1a1a2e; margin-bottom: 1.5rem; }
+    .callout { background: #f5f5f5; border-left: 3px solid #FAC775; border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+    .callout-title { font-size: 14px; font-weight: 600; color: #1a1a2e; margin-bottom: 4px; }
+    .callout-text { font-size: 14px; color: #555; line-height: 1.6; }
+    .section-label { font-size: 11px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .video-link { display: block; background: #1a1a2e; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; text-decoration: none; text-align: center; }
+    .video-icon { font-size: 32px; margin-bottom: 8px; }
+    .video-title { font-size: 16px; font-weight: 600; color: #EEEDFE; margin-bottom: 6px; }
+    .video-subtitle { font-size: 13px; color: #AFA9EC; }
+    .research-links { display: flex; flex-direction: column; gap: 8px; margin-bottom: 2rem; }
+    .research-link { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border: 0.5px solid #e0e0e0; border-radius: 8px; text-decoration: none; color: inherit; }
+    .research-link:hover { border-color: #AFA9EC; background: #f9f9ff; }
+    .research-icon { width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; }
+    .research-title { font-size: 13px; font-weight: 500; color: #1a1a2e; }
+    .research-source { font-size: 11px; color: #888; margin-top: 2px; }
+    .research-arrow { margin-left: auto; color: #AFA9EC; font-size: 14px; }
+    .topic-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .topic-tag { font-size: 12px; padding: 5px 12px; border-radius: 999px; }
+  </style>
+
+  <div class="article-header">
+    <div class="tags">
+      <span class="tag" style="background:#FAC775;color:#412402;">Reaction of the week</span>
+      <span class="tag" style="background:#E1F5EE;color:#085041;">Redox Reaction</span>
+    </div>
+    <h1 class="article-title">The Amazing Iodine Clock: Chemistry's Most Dramatic Timer</h1>
+    <p class="article-desc">Watch colorless solutions suddenly turn deep blue in perfect synchronization - a mesmerizing demonstration that reveals the hidden world of reaction kinetics and chemical timing.</p>
+    <div class="meta">8 min read · Includes video · 3 research links</div>
+  </div>
+
+  <div class="section-label">The reaction</div>
+  <div class="equation-box">
+    <span class="eq-part" style="color:#AFA9EC;">IO₃⁻ + HSO₃⁻ + H⁺</span>
+    <span class="eq-arrow">→</span>
+    <span class="eq-part" style="color:#9FE1CB;">I₂ + starch complex</span>
+  </div>
+
+  <p class="body-text">Imagine mixing two colorless solutions and watching them remain completely clear for what feels like forever - then suddenly, in the blink of an eye, the entire mixture turns a striking deep blue. This isn't magic; it's the iodine clock reaction, one of chemistry's most spectacular demonstrations of how reactions can appear to happen all at once, even though they're actually following precise molecular choreography.</p>
+  
+  <p class="body-text">The iodine clock reaction is actually a clever combination of two reactions happening simultaneously. In the first reaction, iodate ions (IO₃⁻) react with hydrogen sulfite ions (HSO₃⁻) in acidic conditions to slowly produce iodine (I₂). Meanwhile, any iodine that forms immediately reacts with more hydrogen sulfite ions and gets converted back to iodide ions (I⁻). This creates a kind of molecular tug-of-war where iodine is being made and destroyed at the same time.</p>
+
+  <div class="callout">
+    <div class="callout-title">The Clock Mechanism</div>
+    <div class="callout-text">The "clock" effect occurs because one reactant (hydrogen sulfite) eventually gets completely used up. Once it's gone, the newly formed iodine has nothing to react with, so it accumulates rapidly. When starch is present, it immediately forms a deep blue complex with the accumulated iodine, creating the dramatic color change.</div>
+  </div>
+
+  <p class="body-text">What makes this reaction so fascinating from a kinetics perspective is that the timing is completely predictable and adjustable. By changing the concentrations of the reactants or the temperature, you can make the color change happen in seconds, minutes, or even hours. This makes it an incredible tool for studying reaction rates and understanding how concentration affects the speed of chemical processes. The reaction demonstrates zero-order kinetics initially, then switches to a different rate law once the limiting reagent is consumed - a beautiful example of how complex real-world reactions can be.</p>
+
+  <a href="https://www.youtube.com/results?search_query=iodine+clock+reaction+demonstration+chemistry" target="_blank" class="video-link">
+    <div class="video-icon">▶</div>
+    <div class="video-title">Watch on YouTube</div>
+    <div class="video-subtitle">See the dramatic iodine clock reaction in action</div>
+  </a>
+
+  <div class="section-label">Go deeper</div>
+  <div class="research-links">
+    <a href="https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Kinetics/02%3A_Reaction_Rates/2.01%3A_Experimental_Determination_of_Kinetics/2.1.05%3A_The_Method_of_Initial_Rates_(Differential_Rate_Laws)/2.1.5.03%3A_The_Iodine_Clock_Reactions" target="_blank" class="research-link">
+      <div class="research-icon" style="background:#E6F1FB;">📄</div>
+      <div>
+        <div class="research-title">Iodine Clock Reaction Kinetics</div>
+        <div class="research-source">LibreTexts Chemistry</div>
+      </div>
+      <span class="research-arrow">→</span>
+    </a>
+    <a href="https://www.khanacademy.org/science/ap-chemistry-beta/x2eef969c74e0d802:kinetics/x2eef969c74e0d802:rates-of-reaction/a/rates-of-reaction-and-stoichiometry" target="_blank" class="research-link">
+      <div class="research-icon" style="background:#E1F5EE;">📄</div>
+      <div>
+        <div class="research-title">Reaction Rates and Kinetics</div>
+        <div class="research-source">Khan Academy</div>
+      </div>
+      <span class="research-arrow">→</span>
+    </a>
+    <a href="https://pubs.acs.org/doi/10.1021/ed100894k" target="_blank" class="research-link">
+      <div class="research-icon" style="background:#EEEDFE;">📄</div>
+      <div>
+        <div class="research-title">Clock Reactions in Chemical Education</div>
+        <div class="research-source">Journal of Chemical Education</div>
+      </div>
+      <span class="research-arrow">→</span>
+    </a>
+  </div>
+
+  <div class="section-label">Topics</div>
+  <div class="topic-tags">
+    <span class="topic-tag" style="background:#EEEDFE;color:#534AB7;">Reaction Kinetics</span>
+    <span class="topic-tag" style="background:#E1F5EE;color:#085041;">Redox Chemistry</span>
+    <span class="topic-tag" style="background:#FAEEDA;color:#633806;">Rate Laws</span>
+  </div>
+</Layout>
