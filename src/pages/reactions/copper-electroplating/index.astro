@@ -1,0 +1,103 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Copper Electroplating: Adding Metal Coatings with Electricity" description="Learn how copper electroplating uses electrical current to deposit copper atoms onto objects, creating protective and decorative metal coatings.">
+  <style>
+    .article-header { background: #3C3489; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 999px; font-weight: 500; }
+    .article-title { font-size: 28px; font-weight: 600; color: #EEEDFE; line-height: 1.3; margin-bottom: 10px; }
+    .article-desc { font-size: 15px; color: #AFA9EC; line-height: 1.6; margin-bottom: 12px; }
+    .meta { font-size: 13px; color: #7F77DD; }
+    .equation-box { background: #26215C; border-radius: 12px; padding: 1.25rem; display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 2rem; flex-wrap: wrap; }
+    .eq-part { font-size: 18px; font-weight: 500; }
+    .eq-arrow { font-size: 14px; color: #7F77DD; }
+    .body-text { font-size: 16px; line-height: 1.8; color: #1a1a2e; margin-bottom: 1.5rem; }
+    .callout { background: #f5f5f5; border-left: 3px solid #FAC775; border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+    .callout-title { font-size: 14px; font-weight: 600; color: #1a1a2e; margin-bottom: 4px; }
+    .callout-text { font-size: 14px; color: #555; line-height: 1.6; }
+    .section-label { font-size: 11px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .video-link { display: block; background: #1a1a2e; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; text-decoration: none; text-align: center; }
+    .video-icon { font-size: 32px; margin-bottom: 8px; }
+    .video-title { font-size: 16px; font-weight: 600; color: #EEEDFE; margin-bottom: 6px; }
+    .video-subtitle { font-size: 13px; color: #AFA9EC; }
+    .research-links { display: flex; flex-direction: column; gap: 8px; margin-bottom: 2rem; }
+    .research-link { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border: 0.5px solid #e0e0e0; border-radius: 8px; text-decoration: none; color: inherit; }
+    .research-link:hover { border-color: #AFA9EC; background: #f9f9ff; }
+    .research-icon { width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 14px; }
+    .research-title { font-size: 13px; font-weight: 500; color: #1a1a2e; }
+    .research-source { font-size: 11px; color: #888; margin-top: 2px; }
+    .research-arrow { margin-left: auto; color: #AFA9EC; font-size: 14px; }
+    .topic-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .topic-tag { font-size: 12px; padding: 5px 12px; border-radius: 999px; }
+  </style>
+
+  <div class="article-header">
+    <div class="tags">
+      <span class="tag" style="background:#FAC775;color:#412402;">Reaction of the week</span>
+      <span class="tag" style="background:#E1F5EE;color:#085041;">Electrochemical</span>
+    </div>
+    <h1 class="article-title">Copper Electroplating: Metal Coatings Made by Electricity</h1>
+    <p class="article-desc">Discover how electrical current drives copper ions from solution onto metal surfaces, creating everything from decorative jewelry to circuit boards in this fascinating electrochemical process.</p>
+    <div class="meta">8 min read · Includes video · 3 research links</div>
+  </div>
+
+  <div class="section-label">The reaction</div>
+  <div class="equation-box">
+    <span class="eq-part" style="color:#AFA9EC;">Cu²⁺ + 2e⁻</span>
+    <span class="eq-arrow">→</span>
+    <span class="eq-part" style="color:#9FE1CB;">Cu(s)</span>
+  </div>
+
+  <p class="body-text">Imagine being able to coat any metal object with a thin, uniform layer of copper using nothing but electricity and a simple chemical solution. That's exactly what copper electroplating does! This process uses electrical current to drive copper ions from a solution onto the surface of another metal, creating a protective or decorative copper coating.</p>
+
+  <p class="body-text">The magic happens in an electroplating cell, which consists of two electrodes submerged in a copper sulfate solution. The object to be plated (like a steel spoon or circuit board) becomes the cathode (negative electrode), while a piece of pure copper serves as the anode (positive electrode). When electrical current flows through the circuit, copper atoms at the anode lose electrons and dissolve into the solution as Cu²⁺ ions, while copper ions in the solution gain electrons at the cathode and deposit as solid copper metal.</p>
+
+  <div class="callout">
+    <div class="callout-title">Reduction at the Cathode</div>
+    <div class="callout-text">The key reaction occurs at the cathode (the object being plated), where copper ions gain electrons in a reduction reaction: Cu²⁺ + 2e⁻ → Cu(s). This is why electroplating is classified as an electrochemical process - it uses electrical energy to drive a chemical reaction that wouldn't happen spontaneously.</div>
+  </div>
+
+  <p class="body-text">The beauty of electroplating lies in its precision and control. By adjusting the current, voltage, and plating time, you can control the thickness of the copper layer from just a few micrometers to several millimeters. The copper atoms deposit evenly across the surface, following the contours perfectly and creating a uniform coating. This process is used industrially to create everything from copper-plated jewelry and decorative items to the copper traces on printed circuit boards that make your smartphone work!</p>
+
+  <a href="https://www.youtube.com/results?search_query=copper+electroplating+demonstration+chemistry" target="_blank" class="video-link">
+    <div class="video-icon">▶</div>
+    <div class="video-title">Watch on YouTube</div>
+    <div class="video-subtitle">See copper electroplating demonstrations and lab experiments</div>
+  </a>
+
+  <div class="section-label">Go deeper</div>
+  <div class="research-links">
+    <a href="https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Electrochemistry/Electrolytic_Cells/Electrolysis" target="_blank" class="research-link">
+      <div class="research-icon" style="background:#E6F1FB;">📄</div>
+      <div>
+        <div class="research-title">Electrolysis and Electrolytic Cells</div>
+        <div class="research-source">Chemistry LibreTexts</div>
+      </div>
+      <span class="research-arrow">→</span>
+    </a>
+    <a href="https://www.khanacademy.org/science/chemistry/oxidation-reduction/electrochemistry-tutorial/a/electroplating" target="_blank" class="research-link">
+      <div class="research-icon" style="background:#E1F5EE;">📄</div>
+      <div>
+        <div class="research-title">Electroplating and Electroforming</div>
+        <div class="research-source">Khan Academy</div>
+      </div>
+      <span class="research-arrow">→</span>
+    </a>
+    <a href="https://pubs.acs.org/doi/10.1021/acs.jchemed.8b00273" target="_blank" class="research-link">
+      <div class="research-icon" style="background:#EEEDFE;">📄</div>
+      <div>
+        <div class="research-title">Electroplating Experiments for Chemistry Education</div>
+        <div class="research-source">Journal of Chemical Education</div>
+      </div>
+      <span class="research-arrow">→</span>
+    </a>
+  </div>
+
+  <div class="section-label">Topics</div>
+  <div class="topic-tags">
+    <span class="topic-tag" style="background:#EEEDFE;color:#534AB7;">Electrochemistry</span>
+    <span class="topic-tag" style="background:#E1F5EE;color:#085041;">Reduction Reactions</span>
+    <span class="topic-tag" style="background:#FAEEDA;color:#633806;">Industrial Chemistry</span>
+  </div>
+</Layout>
