@@ -1,0 +1,81 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Introduction to Organic Chemistry: The Chemistry of Life" description="Learn the basics of organic chemistry, including what makes compounds organic, common functional groups, and why carbon is so special in creating the molecules of life.">
+  <style>
+    .article-header { background: #26215C; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 999px; font-weight: 500; }
+    .article-title { font-size: 28px; font-weight: 600; color: #EEEDFE; line-height: 1.3; margin-bottom: 10px; }
+    .objective { background: #534AB7; border-radius: 8px; padding: 0.75rem 1rem; font-size: 14px; color: #EEEDFE; }
+    .objective strong { color: #FAC775; }
+    .vocab-box { background: #EEEDFE; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+    .vocab-title { font-size: 13px; font-weight: 600; color: #534AB7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .vocab-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .vocab-item { background: white; border-radius: 8px; padding: 0.75rem 1rem; }
+    .vocab-word { font-size: 14px; font-weight: 600; color: #26215C; margin-bottom: 3px; }
+    .vocab-def { font-size: 13px; color: #555; line-height: 1.5; }
+    .video-link { display: block; background: #1a1a2e; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; text-decoration: none; text-align: center; }
+    .video-icon { font-size: 32px; margin-bottom: 8px; }
+    .video-title { font-size: 16px; font-weight: 600; color: #EEEDFE; margin-bottom: 6px; }
+    .video-subtitle { font-size: 13px; color: #AFA9EC; }
+    .facts-box { background: #f5f5f5; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+    .facts-title { font-size: 13px; font-weight: 600; color: #26215C; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .fact { display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start; }
+    .fact-dot { width: 8px; height: 8px; border-radius: 50%; background: #534AB7; flex-shrink: 0; margin-top: 6px; }
+    .fact-text { font-size: 15px; color: #1a1a2e; line-height: 1.6; }
+    .fact-text strong { color: #26215C; }
+    .summary-box { background: #534AB7; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+    .summary-title { font-size: 13px; font-weight: 600; color: #FAC775; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .summary-text { font-size: 15px; color: #EEEDFE; line-height: 1.7; }
+    .topic-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 2rem; }
+    .topic-tag { font-size: 12px; padding: 5px 12px; border-radius: 999px; }
+  </style>
+
+  <div class="article-header">
+    <div class="tags">
+      <span class="tag" style="background:#FAEEDA;color:#412402;">Beginner</span>
+      <span class="tag" style="background:#EEEDFE;color:#26215C;">Organic Chemistry</span>
+    </div>
+    <h1 class="article-title">Introduction to Organic Chemistry: The Chemistry of Life</h1>
+    <div class="objective"><strong>Learning objective:</strong> Understand what organic chemistry is, identify the special properties of carbon, and recognize common organic compounds in everyday life.</div>
+  </div>
+
+  <div class="vocab-box">
+    <div class="vocab-title">Key vocabulary</div>
+    <div class="vocab-grid">
+      <div class="vocab-item"><div class="vocab-word">Organic compound</div><div class="vocab-def">A chemical compound that contains carbon atoms bonded to other elements, especially hydrogen</div></div>
+      <div class="vocab-item"><div class="vocab-word">Hydrocarbon</div><div class="vocab-def">A compound made only of carbon and hydrogen atoms</div></div>
+      <div class="vocab-item"><div class="vocab-word">Functional group</div><div class="vocab-def">A specific group of atoms that gives an organic molecule its special properties</div></div>
+      <div class="vocab-item"><div class="vocab-word">Covalent bond</div><div class="vocab-def">A chemical bond where atoms share electrons to stay connected</div></div>
+      <div class="vocab-item"><div class="vocab-word">Carbon chain</div><div class="vocab-def">A series of carbon atoms connected together in a row or ring</div></div>
+      <div class="vocab-item"><div class="vocab-word">Isomer</div><div class="vocab-def">Compounds with the same chemical formula but different arrangements of atoms</div></div>
+    </div>
+  </div>
+
+  <a href="https://www.youtube.com/results?search_query=introduction+to+organic+chemistry+basics+high+school" target="_blank" class="video-link">
+    <div class="video-icon">▶</div>
+    <div class="video-title">Watch on YouTube</div>
+    <div class="video-subtitle">Search for "Introduction to Organic Chemistry Basics"</div>
+  </a>
+
+  <div class="facts-box">
+    <div class="facts-title">Key facts</div>
+    <div class="fact"><div class="fact-dot"></div><div class="fact-text"><strong>Carbon is special</strong> because it can form four strong covalent bonds, allowing it to create long chains and complex shapes that other elements cannot make.</div></div>
+    <div class="fact"><div class="fact-dot"></div><div class="fact-text"><strong>All living things</strong> contain organic compounds - from the DNA in your cells to the sugar in your blood to the proteins in your muscles.</div></div>
+    <div class="fact"><div class="fact-dot"></div><div class="fact-text"><strong>Methane (CH₄)</strong> is the simplest organic compound, containing just one carbon atom bonded to four hydrogen atoms.</div></div>
+    <div class="fact"><div class="fact-dot"></div><div class="fact-text"><strong>Organic compounds</strong> can have the same formula but different structures - these are called isomers and they have different properties.</div></div>
+    <div class="fact"><div class="fact-dot"></div><div class="fact-text"><strong>Common organic compounds</strong> include gasoline (for cars), alcohol (in drinks), sugar (for energy), and plastics (made from petroleum).</div></div>
+  </div>
+
+  <div class="summary-box">
+    <div class="summary-title">Summary</div>
+    <div class="summary-text">Organic chemistry is the study of compounds that contain carbon atoms, which are found in all living things and many everyday materials. Carbon is unique because it can form four strong bonds and create long chains, rings, and complex structures that make life possible. Understanding organic chemistry helps us learn about everything from the food we eat to the medicines that keep us healthy.</div>
+  </div>
+
+  <div class="topic-tags">
+    <span class="topic-tag" style="background:#EEEDFE;color:#534AB7;">Carbon Chemistry</span>
+    <span class="topic-tag" style="background:#FAEEDA;color:#633806;">Molecular Structure</span>
+    <span class="topic-tag" style="background:#E1F5EE;color:#085041;">Chemical Bonds</span>
+  </div>
+</Layout>
