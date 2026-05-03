@@ -1,0 +1,198 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Chemical Reactions Quiz - Beginner" description="Test your knowledge of basic chemical reactions with this interactive quiz for high school students.">
+  <style>
+    .quiz-header { background: #26215C; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .quiz-title { font-size: 26px; font-weight: 600; color: #EEEDFE; margin-bottom: 8px; }
+    .quiz-meta { font-size: 14px; color: #AFA9EC; }
+    .question-box { background: white; border-radius: 12px; border: 0.5px solid #e0e0e0; padding: 2rem; margin-bottom: 1.5rem; display: none; }
+    .question-box.active { display: block; }
+    .question-number { font-size: 12px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+    .question-text { font-size: 18px; font-weight: 500; color: #1a1a2e; margin-bottom: 1.5rem; line-height: 1.5; }
+    .options { display: flex; flex-direction: column; gap: 10px; }
+    .option { background: #f5f5f5; border: 2px solid transparent; border-radius: 8px; padding: 12px 16px; font-size: 15px; color: #1a1a2e; cursor: pointer; text-align: left; font-family: inherit; }
+    .option:hover:not(:disabled) { border-color: #AFA9EC; }
+    .option.correct { background: #E1F5EE; border-color: #085041; color: #085041; }
+    .option.wrong { background: #FAECE7; border-color: #712B13; color: #712B13; }
+    .option.reveal { background: #E1F5EE; border-color: #085041; color: #085041; }
+    .feedback { margin-top: 1rem; padding: 0.75rem 1rem; border-radius: 8px; font-size: 14px; display: none; line-height: 1.5; }
+    .feedback.show { display: block; }
+    .feedback.correct { background: #E1F5EE; color: #085041; }
+    .feedback.wrong { background: #FAECE7; color: #712B13; }
+    .next-btn { margin-top: 1rem; background: #534AB7; color: white; border: none; padding: 10px 24px; border-radius: 8px; font-size: 15px; cursor: pointer; font-family: inherit; display: none; }
+    .next-btn.show { display: block; }
+    .progress { background: #f5f5f5; border-radius: 999px; height: 8px; margin-bottom: 2rem; overflow: hidden; }
+    .progress-bar { background: #534AB7; height: 100%; border-radius: 999px; transition: width 0.3s; }
+    .score-box { background: #26215C; border-radius: 12px; padding: 2rem; text-align: center; display: none; }
+    .score-box.show { display: block; }
+    .score-title { font-size: 22px; font-weight: 600; color: #EEEDFE; margin-bottom: 8px; }
+    .score-value { font-size: 48px; font-weight: 600; color: #FAC775; margin-bottom: 8px; }
+    .score-message { font-size: 15px; color: #AFA9EC; margin-bottom: 1.5rem; }
+    .retry-btn { background: #534AB7; color: white; border: none; padding: 10px 24px; border-radius: 8px; font-size: 15px; cursor: pointer; font-family: inherit; }
+  </style>
+
+  <div class="quiz-header">
+    <h1 class="quiz-title">Chemical Reactions Quiz - Beginner</h1>
+    <div class="quiz-meta">5 questions · Multiple choice · Instant feedback</div>
+  </div>
+
+  <div class="progress"><div class="progress-bar" id="progress-bar" style="width:0%"></div></div>
+  <div id="quiz-container"></div>
+  <div class="score-box" id="score-box">
+    <div class="score-title">Quiz complete!</div>
+    <div class="score-value" id="score-value"></div>
+    <div class="score-message" id="score-message"></div>
+    <button class="retry-btn" id="retry-btn">Try again</button>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        text: "What is a chemical reaction?",
+        options: [
+          "A physical change where substances change shape",
+          "A process where substances are rearranged to form new substances",
+          "When matter changes from solid to liquid",
+          "The mixing of two liquids together"
+        ],
+        correct: 1,
+        feedback: {
+          correct: "Correct! A chemical reaction involves the rearrangement of atoms to form new substances with different properties.",
+          wrong: "Not quite. A chemical reaction creates new substances through the rearrangement of atoms, not just physical changes."
+        }
+      },
+      {
+        text: "Which of the following is a sign that a chemical reaction has occurred?",
+        options: [
+          "A change in temperature",
+          "Formation of a gas or precipitate",
+          "A change in color",
+          "All of the above"
+        ],
+        correct: 3,
+        feedback: {
+          correct: "Excellent! Temperature changes, gas formation, precipitate formation, and color changes are all indicators of chemical reactions.",
+          wrong: "Actually, all of these are signs of chemical reactions. Temperature changes, gas/precipitate formation, and color changes all indicate new substances are forming."
+        }
+      },
+      {
+        text: "In the chemical equation H₂ + Cl₂ → 2HCl, what are H₂ and Cl₂ called?",
+        options: [
+          "Products",
+          "Catalysts",
+          "Reactants",
+          "Coefficients"
+        ],
+        correct: 2,
+        feedback: {
+          correct: "Right! Reactants are the starting materials that undergo change in a chemical reaction.",
+          wrong: "Not correct. H₂ and Cl₂ are reactants - the starting materials. The product (HCl) is what forms after the reaction."
+        }
+      },
+      {
+        text: "What does it mean when a chemical equation is balanced?",
+        options: [
+          "The reaction happens very quickly",
+          "The same number of each type of atom appears on both sides",
+          "The products weigh more than the reactants",
+          "The reaction produces heat"
+        ],
+        correct: 1,
+        feedback: {
+          correct: "Perfect! A balanced equation follows the law of conservation of mass - atoms cannot be created or destroyed.",
+          wrong: "Incorrect. A balanced equation means the same number of each type of atom appears on both sides, following conservation of mass."
+        }
+      },
+      {
+        text: "Which type of reaction is represented by: A + B → AB?",
+        options: [
+          "Decomposition reaction",
+          "Single replacement reaction",
+          "Synthesis (combination) reaction",
+          "Double replacement reaction"
+        ],
+        correct: 2,
+        feedback: {
+          correct: "Correct! A synthesis or combination reaction occurs when two or more simple substances combine to form a more complex compound.",
+          wrong: "Not right. When two substances (A + B) combine to form one product (AB), this is a synthesis or combination reaction."
+        }
+      }
+    ];
+
+    let score = 0;
+    let current = 0;
+    let answered = false;
+
+    function buildQuestion(index) {
+      const q = questions[index];
+      const div = document.createElement('div');
+      div.className = 'question-box active';
+      div.id = 'question-box';
+      div.innerHTML = `
+        <div class="question-number">Question ${index + 1} of ${questions.length}</div>
+        <div class="question-text">${q.text}</div>
+        <div class="options" id="options-box">
+          ${q.options.map((opt, i) => `<button class="option" data-index="${i}">${opt}</button>`).join('')}
+        </div>
+        <div class="feedback" id="feedback-box"></div>
+        <button class="next-btn" id="next-btn">${index === questions.length - 1 ? 'See my score →' : 'Next question →'}</button>
+      `;
+      return div;
+    }
+
+    function showQuestion(index) {
+      answered = false;
+      const container = document.getElementById('quiz-container');
+      container.innerHTML = '';
+      const qDiv = buildQuestion(index);
+      container.appendChild(qDiv);
+      document.getElementById('options-box').querySelectorAll('.option').forEach(btn => {
+        btn.addEventListener('click', function() {
+          if (answered) return;
+          answered = true;
+          const chosen = parseInt(this.dataset.index);
+          const correct = questions[index].correct;
+          const allOptions = document.getElementById('options-box').querySelectorAll('.option');
+          allOptions.forEach(b => b.disabled = true);
+          const fb = document.getElementById('feedback-box');
+          if (chosen === correct) {
+            this.classList.add('correct');
+            fb.textContent = questions[index].feedback.correct;
+            fb.className = 'feedback show correct';
+            score++;
+          } else {
+            this.classList.add('wrong');
+            allOptions[correct].classList.add('reveal');
+            fb.textContent = questions[index].feedback.wrong;
+            fb.className = 'feedback show wrong';
+          }
+          document.getElementById('next-btn').classList.add('show');
+          document.getElementById('progress-bar').style.width = ((index + 1) / questions.length * 100) + '%';
+        });
+      });
+      document.getElementById('next-btn').addEventListener('click', function() {
+        if (index === questions.length - 1) { showScore(); } else { current++; showQuestion(current); }
+      });
+    }
+
+    function showScore() {
+      document.getElementById('quiz-container').innerHTML = '';
+      const scoreBox = document.getElementById('score-box');
+      scoreBox.classList.add('show');
+      document.getElementById('score-value').textContent = score + '/' + questions.length;
+      const pct = score / questions.length;
+      let msg = pct === 1 ? 'Perfect score!' : pct >= 0.8 ? 'Excellent work!' : pct >= 0.6 ? 'Good work! Review a few topics.' : 'Keep practicing! Read the article and try again.';
+      document.getElementById('score-message').textContent = msg;
+    }
+
+    document.getElementById('retry-btn').addEventListener('click', function() {
+      score = 0; current = 0;
+      document.getElementById('score-box').classList.remove('show');
+      document.getElementById('progress-bar').style.width = '0%';
+      showQuestion(0);
+    });
+
+    showQuestion(0);
+  </script>
+</Layout>
