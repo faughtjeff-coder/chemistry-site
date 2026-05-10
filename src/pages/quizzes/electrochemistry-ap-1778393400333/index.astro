@@ -1,0 +1,157 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="AP Electrochemistry Quiz" description="Test your knowledge of electrochemistry concepts including galvanic cells, electrolysis, and redox reactions">
+  <style>
+    .quiz-header { background: #26215C; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .quiz-title { font-size: 26px; font-weight: 600; color: #EEEDFE; margin-bottom: 8px; }
+    .quiz-meta { font-size: 14px; color: #AFA9EC; }
+    .question-box { background: white; border-radius: 12px; border: 0.5px solid #e0e0e0; padding: 2rem; margin-bottom: 1.5rem; display: none; }
+    .question-box.active { display: block; }
+    .question-number { font-size: 12px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+    .question-text { font-size: 18px; font-weight: 500; color: #1a1a2e; margin-bottom: 1.5rem; line-height: 1.5; }
+    .options { display: flex; flex-direction: column; gap: 10px; }
+    .option { background: #f5f5f5; border: 2px solid transparent; border-radius: 8px; padding: 12px 16px; font-size: 15px; color: #1a1a2e; cursor: pointer; text-align: left; font-family: inherit; }
+    .option:hover:not(:disabled) { border-color: #AFA9EC; }
+    .option.correct { background: #E1F5EE; border-color: #085041; color: #085041; }
+    .option.wrong { background: #FAECE7; border-color: #712B13; color: #712B13; }
+    .option.reveal { background: #E1F5EE; border-color: #085041; color: #085041; }
+    .feedback { margin-top: 1rem; padding: 0.75rem 1rem; border-radius: 8px; font-size: 14px; display: none; line-height: 1.5; }
+    .feedback.show { display: block; }
+    .feedback.correct { background: #E1F5EE; color: #085041; }
+    .feedback.wrong { background: #FAECE7; color: #712B13; }
+    .next-btn { margin-top: 1rem; background: #534AB7; color: white; border: none; padding: 10px 24px; border-radius: 8px; font-size: 15px; cursor: pointer; font-family: inherit; display: none; }
+    .next-btn.show { display: block; }
+    .progress { background: #f5f5f5; border-radius: 999px; height: 8px; margin-bottom: 2rem; overflow: hidden; }
+    .progress-bar { background: #534AB7; height: 100%; border-radius: 999px; transition: width 0.3s; }
+    .score-box { background: #26215C; border-radius: 12px; padding: 2rem; text-align: center; display: none; }
+    .score-box.show { display: block; }
+    .score-title { font-size: 22px; font-weight: 600; color: #EEEDFE; margin-bottom: 8px; }
+    .score-value { font-size: 48px; font-weight: 600; color: #FAC775; margin-bottom: 8px; }
+    .score-message { font-size: 15px; color: #AFA9EC; margin-bottom: 1.5rem; }
+    .retry-btn { background: #534AB7; color: white; border: none; padding: 10px 24px; border-radius: 8px; font-size: 15px; cursor: pointer; font-family: inherit; }
+  </style>
+
+  <div class="quiz-header">
+    <h1 class="quiz-title">AP Electrochemistry Quiz</h1>
+    <div class="quiz-meta">5 questions · Multiple choice · Instant feedback</div>
+  </div>
+
+  <div class="progress"><div class="progress-bar" id="progress-bar" style="width:0%"></div></div>
+  <div id="quiz-container"></div>
+  <div class="score-box" id="score-box">
+    <div class="score-title">Quiz complete!</div>
+    <div class="score-value" id="score-value"></div>
+    <div class="score-message" id="score-message"></div>
+    <button class="retry-btn" id="retry-btn">Try again</button>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        text: "In a galvanic cell with zinc and copper electrodes, which of the following statements is correct?",
+        options: [
+          "Zinc is reduced at the cathode",
+          "Copper is oxidized at the anode", 
+          "Electrons flow from copper to zinc through the external circuit",
+          "Electrons flow from zinc to copper through the external circuit"
+        ],
+        correct: 3,
+        feedback: {
+          correct: "Correct! Zinc has a lower reduction potential than copper, so it is oxidized (loses electrons) and electrons flow from zinc to copper through the external circuit.",
+          wrong: "Incorrect. Zinc is oxidized (not reduced) because it has a lower reduction potential than copper. Electrons flow from the anode (zinc) to the cathode (copper)."
+        }
+      },
+      {
+        text: "What is the standard cell potential (E°cell) for a galvanic cell with the reaction: Mg(s) + Cu²⁺(aq) → Mg²⁺(aq) + Cu(s)? Given: E°(Cu²⁺/Cu) = +0.34 V and E°(Mg²⁺/Mg) = -2.37 V",
+        options: [
+          "+2.03 V",
+          "+2.71 V",
+          "-2.03 V", 
+          "-2.71 V"
+        ],
+        correct: 1,
+        feedback: {
+          correct: "Correct! E°cell = E°cathode - E°anode = E°(Cu²⁺/Cu) - E°(Mg²⁺/Mg) = 0.34 - (-2.37) = +2.71 V",
+          wrong: "Incorrect. Use E°cell = E°cathode - E°anode. Copper is reduced (cathode) and magnesium is oxidized (anode), so E°cell = 0.34 - (-2.37) = +2.71 V."
+        }
+      },
+      {
+        text: "During the electrolysis of molten NaCl, what products are formed at the electrodes?",
+        options: [
+          "Na⁺ at cathode, Cl⁻ at anode",
+          "Na at cathode, Cl₂ at anode",
+          "H₂ at cathode, O₂ at anode",
+          "NaOH at cathode, Cl₂ at anode"
+        ],
+        correct: 1,
+        feedback: {
+          correct: "Correct! In molten NaCl electrolysis, Na⁺ is reduced to Na metal at the cathode, and Cl⁻ is oxidized to Cl₂ gas at the anode.",
+          wrong: "Incorrect. In molten NaCl (not aqueous), Na⁺ ions are reduced to sodium metal at the cathode, and Cl⁻ ions are oxidized to chlorine gas at the anode."
+        }
+      },
+      {
+        text: "Using the Nernst equation, what is the cell potential at 25°C for a concentration cell where [Cu²⁺] = 0.10 M in one half-cell and [Cu²⁺] = 1.0 M in the other? (R = 8.314 J/mol·K, F = 96,485 C/mol)",
+        options: [
+          "+0.030 V",
+          "-0.030 V",
+          "+0.059 V",
+          "-0.059 V"
+        ],
+        correct: 0,
+        feedback: {
+          correct: "Correct! For a concentration cell, E = (RT/nF)ln(C₁/C₂) = (0.0257/2)ln(1.0/0.10) = 0.01285 × 2.303 = +0.030 V",
+          wrong: "Incorrect. Use the Nernst equation: E = (RT/nF)ln(C_cathode/C_anode). With n=2 for Cu²⁺, E = (0.0257/2)ln(1.0/0.10) = +0.030 V."
+        }
+      },
+      {
+        text: "How many moles of electrons are required to deposit 12.7 g of copper from a Cu²⁺ solution during electrolysis? (Atomic mass of Cu = 63.5 g/mol)",
+        options: [
+          "0.10 mol e⁻",
+          "0.20 mol e⁻", 
+          "0.40 mol e⁻",
+          "0.80 mol e⁻"
+        ],
+        correct: 2,
+        feedback: {
+          correct: "Correct! First find moles of Cu: 12.7 g ÷ 63.5 g/mol = 0.20 mol Cu. Since Cu²⁺ + 2e⁻ → Cu, you need 0.20 mol × 2 = 0.40 mol electrons.",
+          wrong: "Incorrect. Calculate moles of Cu deposited (12.7 g ÷ 63.5 g/mol = 0.20 mol), then multiply by 2 electrons per Cu²⁺ ion to get 0.40 mol electrons."
+        }
+      }
+    ];
+
+    let score = 0;
+    let current = 0;
+    let answered = false;
+
+    function buildQuestion(index) {
+      const q = questions[index];
+      const div = document.createElement('div');
+      div.className = 'question-box active';
+      div.id = 'question-box';
+      div.innerHTML = `
+        <div class="question-number">Question ${index + 1} of ${questions.length}</div>
+        <div class="question-text">${q.text}</div>
+        <div class="options" id="options-box">
+          ${q.options.map((opt, i) => `<button class="option" data-index="${i}">${opt}</button>`).join('')}
+        </div>
+        <div class="feedback" id="feedback-box"></div>
+        <button class="next-btn" id="next-btn">${index === questions.length - 1 ? 'See my score →' : 'Next question →'}</button>
+      `;
+      return div;
+    }
+
+    function showQuestion(index) {
+      answered = false;
+      const container = document.getElementById('quiz-container');
+      container.innerHTML = '';
+      const qDiv = buildQuestion(index);
+      container.appendChild(qDiv);
+      document.getElementById('options-box').querySelectorAll('.option').forEach(btn => {
+        btn.addEventListener('click', function() {
+          if (answered) return;
+          answered = true;
+          const chosen = parseInt(this.dataset.index);
+          const correct = questions[index].correct;
+          const allOptions = document.getElementById('options-box').querySelectorAll('.option');
+          allOptions.forEach(b => b.disabled = true
