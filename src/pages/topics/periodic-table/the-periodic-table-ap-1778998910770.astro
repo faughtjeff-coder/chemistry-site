@@ -1,0 +1,81 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="The Periodic Table: Organization and Trends" description="Learn how the periodic table organizes elements and predicts their properties through periodic trends at the AP Chemistry level.">
+  <style>
+    .article-header { background: #26215C; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+    .tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 999px; font-weight: 500; }
+    .article-title { font-size: 28px; font-weight: 600; color: #EEEDFE; line-height: 1.3; margin-bottom: 10px; }
+    .objective { background: #534AB7; border-radius: 8px; padding: 0.75rem 1rem; font-size: 14px; color: #EEEDFE; }
+    .objective strong { color: #FAC775; }
+    .vocab-box { background: #EEEDFE; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+    .vocab-title { font-size: 13px; font-weight: 600; color: #534AB7; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .vocab-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .vocab-item { background: white; border-radius: 8px; padding: 0.75rem 1rem; }
+    .vocab-word { font-size: 14px; font-weight: 600; color: #26215C; margin-bottom: 3px; }
+    .vocab-def { font-size: 13px; color: #555; line-height: 1.5; }
+    .video-link { display: block; background: #1a1a2e; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; text-decoration: none; text-align: center; }
+    .video-icon { font-size: 32px; margin-bottom: 8px; }
+    .video-title { font-size: 16px; font-weight: 600; color: #EEEDFE; margin-bottom: 6px; }
+    .video-subtitle { font-size: 13px; color: #AFA9EC; }
+    .facts-box { background: #f5f5f5; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+    .facts-title { font-size: 13px; font-weight: 600; color: #26215C; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .fact { display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start; }
+    .fact-dot { width: 8px; height: 8px; border-radius: 50%; background: #534AB7; flex-shrink: 0; margin-top: 6px; }
+    .fact-text { font-size: 15px; color: #1a1a2e; line-height: 1.6; }
+    .fact-text strong { color: #26215C; }
+    .summary-box { background: #534AB7; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; }
+    .summary-title { font-size: 13px; font-weight: 600; color: #FAC775; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+    .summary-text { font-size: 15px; color: #EEEDFE; line-height: 1.7; }
+    .topic-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 2rem; }
+    .topic-tag { font-size: 12px; padding: 5px 12px; border-radius: 999px; }
+  </style>
+
+  <div class="article-header">
+    <div class="tags">
+      <span class="tag" style="background:#FAEEDA;color:#412402;">AP</span>
+      <span class="tag" style="background:#EEEDFE;color:#26215C;">Periodic Table</span>
+    </div>
+    <h1 class="article-title">The Periodic Table: Organization and Trends</h1>
+    <div class="objective"><strong>Learning objective:</strong> Understand how the periodic table organizes elements based on atomic structure and predict element properties using periodic trends</div>
+  </div>
+
+  <div class="vocab-box">
+    <div class="vocab-title">Key vocabulary</div>
+    <div class="vocab-grid">
+      <div class="vocab-item"><div class="vocab-word">Atomic Radius</div><div class="vocab-def">The distance from the nucleus to the outermost electron shell of an atom</div></div>
+      <div class="vocab-item"><div class="vocab-word">Ionization Energy</div><div class="vocab-def">The energy required to remove an electron from a gaseous atom</div></div>
+      <div class="vocab-item"><div class="vocab-word">Electronegativity</div><div class="vocab-def">The ability of an atom to attract electrons in a chemical bond</div></div>
+      <div class="vocab-item"><div class="vocab-word">Electron Affinity</div><div class="vocab-def">The energy change when an electron is added to a neutral gaseous atom</div></div>
+      <div class="vocab-item"><div class="vocab-word">Valence Electrons</div><div class="vocab-def">The electrons in the outermost shell that participate in chemical bonding</div></div>
+      <div class="vocab-item"><div class="vocab-word">Effective Nuclear Charge</div><div class="vocab-def">The net positive charge experienced by valence electrons after accounting for electron shielding</div></div>
+    </div>
+  </div>
+
+  <a href="https://www.youtube.com/results?search_query=periodic+table+trends+AP+chemistry" target="_blank" class="video-link">
+    <div class="video-icon">▶</div>
+    <div class="video-title">Watch on YouTube</div>
+    <div class="video-subtitle">Periodic table trends and organization explained for AP Chemistry</div>
+  </a>
+
+  <div class="facts-box">
+    <div class="facts-title">Key facts</div>
+    <div class="fact"><div class="fact-dot"></div><div class="fact-text">The periodic table is arranged by <strong>increasing atomic number</strong>, not atomic mass, which explains why some elements appear out of mass order</div></div>
+    <div class="fact"><div class="fact-dot"></div><div class="fact-text"><strong>Atomic radius decreases</strong> across a period (left to right) due to increased nuclear charge pulling electrons closer</div></div>
+    <div class="fact"><div class="fact-dot"></div><div class="fact-text"><strong>Ionization energy increases</strong> across a period and decreases down a group, following the opposite pattern of atomic radius</div></div>
+    <div class="fact"><div class="fact-dot"></div><div class="fact-text"><strong>Electronegativity increases</strong> across a period and decreases down a group, with fluorine being the most electronegative element</div></div>
+    <div class="fact"><div class="fact-dot"></div><div class="fact-text">Elements in the same group have the same number of <strong>valence electrons</strong>, which explains why they have similar chemical properties</div></div>
+  </div>
+
+  <div class="summary-box">
+    <div class="summary-title">Summary</div>
+    <div class="summary-text">The periodic table organizes elements by atomic number and reveals predictable patterns in atomic properties called periodic trends. These trends result from changes in atomic structure, particularly the number of protons, electrons, and electron shells as you move across periods and down groups. Understanding these trends allows chemists to predict how elements will behave in chemical reactions and bond formation.</div>
+  </div>
+
+  <div class="topic-tags">
+    <span class="topic-tag" style="background:#EEEDFE;color:#534AB7;">Atomic Structure</span>
+    <span class="topic-tag" style="background:#FAEEDA;color:#633806;">Chemical Properties</span>
+    <span class="topic-tag" style="background:#E1F5EE;color:#085041;">Electron Configuration</span>
+  </div>
+</Layout>
