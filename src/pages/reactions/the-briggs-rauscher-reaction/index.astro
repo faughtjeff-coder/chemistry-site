@@ -1,7 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 ---
-<Layout title="The Briggs-Rauscher Reaction" description="Explore the mesmerizing oscillating reaction that changes colors like a chemical traffic light">
+<Layout title="The Briggs-Rauscher Reaction" description="Discover the mesmerizing oscillating reaction that changes colors in a rhythmic pattern">
   <style>
     .article-header { background: #3C3489; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
     .tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
@@ -9,8 +9,6 @@ import Layout from '../../../layouts/Layout.astro';
     .article-title { font-size: 28px; font-weight: 600; color: #EEEDFE; line-height: 1.3; margin-bottom: 10px; }
     .article-desc { font-size: 15px; color: #AFA9EC; line-height: 1.6; margin-bottom: 12px; }
     .meta { font-size: 13px; color: #7F77DD; }
-    .video-wrapper { background: #1a1a2e; border-radius: 12px; aspect-ratio: 16/9; margin-bottom: 2rem; overflow: hidden; }
-    .video-wrapper iframe { width: 100%; height: 100%; border: none; }
     .equation-box { background: #26215C; border-radius: 12px; padding: 1.25rem; display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 2rem; flex-wrap: wrap; }
     .eq-part { font-size: 18px; font-weight: 500; }
     .eq-arrow { font-size: 14px; color: #7F77DD; }
@@ -19,6 +17,10 @@ import Layout from '../../../layouts/Layout.astro';
     .callout-title { font-size: 14px; font-weight: 600; color: #1a1a2e; margin-bottom: 4px; }
     .callout-text { font-size: 14px; color: #555; line-height: 1.6; }
     .section-label { font-size: 11px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+    .video-link { display: block; background: #1a1a2e; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; text-decoration: none; text-align: center; }
+    .video-icon { font-size: 32px; margin-bottom: 8px; }
+    .video-title { font-size: 16px; font-weight: 600; color: #EEEDFE; margin-bottom: 6px; }
+    .video-subtitle { font-size: 13px; color: #AFA9EC; }
     .research-links { display: flex; flex-direction: column; gap: 8px; margin-bottom: 2rem; }
     .research-link { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border: 0.5px solid #e0e0e0; border-radius: 8px; text-decoration: none; color: inherit; }
     .research-link:hover { border-color: #AFA9EC; background: #f9f9ff; }
@@ -34,15 +36,10 @@ import Layout from '../../../layouts/Layout.astro';
     <div class="tags">
       <span class="tag" style="background:#FAC775;color:#412402;">Reaction of the week</span>
       <span class="tag" style="background:#E1F5EE;color:#085041;">Oscillating Reaction</span>
-      <span class="tag" style="background:#EEEDFE;color:#26215C;">High School</span>
     </div>
-    <h1 class="article-title">The Briggs-Rauscher Reaction: A Chemical Traffic Light</h1>
-    <p class="article-desc">Discover the mesmerizing oscillating reaction that cycles through amber, blue, and clear colors in a rhythmic dance of chemistry.</p>
+    <h1 class="article-title">The Briggs-Rauscher Reaction: Chemistry's Color-Changing Clock</h1>
+    <p class="article-desc">Witness one of chemistry's most spectacular demonstrations as this oscillating reaction rhythmically cycles through amber, blue, and clear colors like a chemical heartbeat.</p>
     <div class="meta">8 min read · Includes video · 3 research links</div>
-  </div>
-
-  <div class="video-wrapper">
-    <iframe src="https://www.youtube.com/embed/LL3kVtc-4vY" title="Briggs-Rauscher Oscillating Reaction" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 
   <div class="section-label">The reaction</div>
@@ -52,16 +49,55 @@ import Layout from '../../../layouts/Layout.astro';
     <span class="eq-part" style="color:#9FE1CB;">ICH(COOH)₂ + 2O₂ + 3H₂O</span>
   </div>
 
-  <p class="body-text">The Briggs-Rauscher reaction is one of the most spectacular demonstrations in chemistry, often called the "chemical traffic light" because of its stunning color changes. Named after its discoverers Thomas Briggs and Warren Rauscher in 1972, this oscillating reaction cycles rhythmically between colorless, amber, and deep blue states, creating a hypnotic display that can continue for several minutes.</p>
-  <p class="body-text">What makes this reaction truly remarkable is its predictable oscillations. Unlike most chemical reactions that proceed steadily from reactants to products, the Briggs-Rauscher reaction alternates between different chemical states in a periodic fashion. The solution will be colorless for about 10 seconds, then suddenly turn amber, followed by a dramatic shift to deep blue, before returning to colorless again.</p>
+  <p class="body-text">Imagine a chemical reaction that behaves like a metronome, rhythmically changing colors every few seconds for minutes on end. The Briggs-Rauscher reaction is exactly that – a mesmerizing oscillating reaction discovered in 1972 that cycles through three distinct colors: clear (colorless), amber (yellow), and deep blue, creating what chemists call a "chemical clock."</p>
+  
+  <p class="body-text">This reaction involves potassium iodate, hydrogen peroxide, malonic acid, manganese sulfate, and sulfuric acid. When mixed together, these seemingly ordinary chemicals create an extraordinary display that demonstrates one of chemistry's most fascinating phenomena: how chemical systems can exhibit periodic behavior, much like the biological rhythms we see in living organisms.</p>
 
   <div class="callout">
-    <div class="callout-title">What Causes the Color Changes?</div>
-    <div class="callout-text">The color changes are caused by the periodic formation and consumption of iodine (I₂) and starch-iodine complexes. The amber color comes from iodine molecules, while the blue color results from the famous starch-iodine complex. When these compounds are consumed, the solution returns to colorless.</div>
+    <div class="callout-title">Oscillating Reactions</div>
+    <div class="callout-text">Unlike typical reactions that proceed steadily from reactants to products, oscillating reactions cycle through different states repeatedly. The concentrations of intermediate species rise and fall in a periodic pattern, creating the color changes we observe. This happens because of complex feedback mechanisms where the products of one step influence earlier steps in the reaction sequence.</div>
   </div>
 
-  <p class="body-text">The reaction involves three main components: potassium iodate (KIO₃), hydrogen peroxide (H₂O₂), and malonic acid (CH₂(COOH)₂), along with sulfuric acid and starch as indicators. The magic happens through a complex mechanism involving two competing pathways - a radical pathway and a non-radical pathway - that alternate dominance, creating the oscillations. This reaction belongs to a class called "chemical oscillators" and demonstrates principles of non-linear dynamics and chaos theory in action.</p>
+  <p class="body-text">The color changes occur due to the formation and consumption of different iodine-containing species. During the clear phase, iodate ions (IO₃⁻) are slowly reduced. In the amber phase, iodine (I₂) forms and creates the yellow-brown color. The dramatic blue phase occurs when iodine reacts with starch (often added as an indicator) to form the characteristic blue iodine-starch complex. The cycle then repeats as the system oscillates between these states, typically continuing for 5-10 minutes before finally settling into a steady blue color.</p>
 
-  <div class="section-label" style="margin-top:2rem;">Go deeper</div>
+  <a href="https://www.youtube.com/results?search_query=briggs+rauscher+oscillating+reaction+demonstration" target="_blank" class="video-link">
+    <div class="video-icon">▶</div>
+    <div class="video-title">Watch on YouTube</div>
+    <div class="video-subtitle">See the Briggs-Rauscher reaction in action with lab demonstrations</div>
+  </a>
+
+  <div class="section-label">Go deeper</div>
   <div class="research-links">
-    <a href="https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules
+    <a href="https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Kinetics/02%3A_Reaction_Rates/2.09%3A_The_Briggs-Rauscher_Oscillating_Reaction" target="_blank" class="research-link">
+      <div class="research-icon" style="background:#E6F1FB;">📄</div>
+      <div>
+        <div class="research-title">The Briggs-Rauscher Oscillating Reaction Mechanism</div>
+        <div class="research-source">LibreTexts Chemistry</div>
+      </div>
+      <span class="research-arrow">→</span>
+    </a>
+    <a href="https://pubs.acs.org/doi/10.1021/ed072p386" target="_blank" class="research-link">
+      <div class="research-icon" style="background:#E1F5EE;">📄</div>
+      <div>
+        <div class="research-title">Oscillating Chemical Reactions in the Laboratory</div>
+        <div class="research-source">Journal of Chemical Education</div>
+      </div>
+      <span class="research-arrow">→</span>
+    </a>
+    <a href="https://www.khanacademy.org/science/chemistry/chem-kinetics" target="_blank" class="research-link">
+      <div class="research-icon" style="background:#EEEDFE;">📄</div>
+      <div>
+        <div class="research-title">Chemical Kinetics and Reaction Mechanisms</div>
+        <div class="research-source">Khan Academy</div>
+      </div>
+      <span class="research-arrow">→</span>
+    </a>
+  </div>
+
+  <div class="section-label">Topics</div>
+  <div class="topic-tags">
+    <span class="topic-tag" style="background:#EEEDFE;color:#534AB7;">Chemical Kinetics</span>
+    <span class="topic-tag" style="background:#E1F5EE;color:#085041;">Reaction Mechanisms</span>
+    <span class="topic-tag" style="background:#FAEEDA;color:#633806;">Iodine Chemistry</span>
+  </div>
+</Layout>
